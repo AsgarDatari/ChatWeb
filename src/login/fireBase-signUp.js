@@ -5,13 +5,13 @@ import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDQKfyKb2y3XLIYEqqbKKN-uBjjUIkm9zU",
-  authDomain: "chatweb-13450.firebaseapp.com",
-  projectId: "chatweb-13450",
-  storageBucket: "chatweb-13450.appspot.com",
-  messagingSenderId: "16463201291",
-  appId: "1:16463201291:web:d5dbd2a9ee4c16f060730e",
-};
+    apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
+    authDomain: "chatweb-awful.firebaseapp.com",
+    projectId: "chatweb-awful",
+    storageBucket: "chatweb-awful.appspot.com",
+    messagingSenderId: "693279532996",
+    appId: "1:693279532996:web:cf6404be59950947e26691"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
