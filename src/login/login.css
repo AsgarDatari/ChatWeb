@@ -96,6 +96,10 @@ form.sign-up-form {
     font-weight: 500;
     color: #000000;
 }
+.input-field img {
+    width: 35px;
+    cursor: pointer;
+}
 .btn {
     width: 150px;
     height: 50px;
