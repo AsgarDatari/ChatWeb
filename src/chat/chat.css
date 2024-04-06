@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container-fluid {
+    height: 100vh;
+}
+.red {
+    border: 2px solid red;
+}
+.blue {
+    border: 2px solid blue;
+}
+.row-up {
+    height: 10vh;
+}
+.row-middle {
+    height: 80vh;
+}
+.row-down {
+    height: 10vh;
+}
+h2 {
+    font-size: 2rem;
+    color: #083671;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin: 16px 0px 0px 8px;
+}
+h3 {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 0px 0px 8px;
+}
+h4 {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px 0px;
+    margin: 0px 0px 0px 0px;
+
+}
+p {
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    color: #a1a1a3;
+    padding: 0px;
+}
+.user-search {
+    width: 100%;
+    height: 30px;
+    background: #ffffff;
+    margin: 10px 0px 20px 0px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.user-search input {
+    flex: 5;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6d747a;
+}
+.user-search img {
+    width: 40px;
+    cursor: pointer;
+    border: none;
+}
+.header-colour {
+    background-color: #edf4fc;
+}
+.user-list {
+    height: 70px;
+    margin: 8px 1px 1px 0px;
+    padding: 12px 0px 0px 12px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.user-list:hover{
+    background-color: #d7e9fd;
+}
+.status {
+    font-size: small;
+}
+.input-message {
+    width: 100%;
+    background: #edf4fc;
+    display: flex;
+    align-items: center;
+}
+.input-message input {
+    padding-left: 16px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    width: 90%;
+    height: 44px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #53585c;
+    border-radius: 12px;
+    margin-left: 18px;
+}
+.input-message img {
+    width: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+    transform: rotate(330deg);
+}
