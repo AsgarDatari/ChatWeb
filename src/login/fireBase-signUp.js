@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
+var userName_signUp = '';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -30,12 +31,16 @@ submitSup.addEventListener("click", function (event) {
     .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
+        userName_signUp = user.email;
+        localStorage.setItem("userName", userName_signUp);
         window.location.href="../chat/chat.html";
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        window.location.href="./loginFailed.html";
+        // window.location.href="./loginFailed.html";
+        document.getElementById('invalid-login').innerHTML = "entered login credintial are invalid";
     });
 
 });
+
