@@ -11,7 +11,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid" id="chat">
         <div class="row row-up">
             <div class="col-3 border-end border-bottom border-4 header-colour">
                 <h2>ChatWeb</h2>
@@ -48,18 +48,25 @@
                 </div>
             </div>
 
-            <div class="col border-up border-bottom border-3">column 2</div>
+            <div class="col border-up border-bottom border-3">
+                <!-- messages will display here -->
+                <ul id="messages"></ul>
+                <!-- form to send message -->
+            </div>
         </div>
 
         <div class="row row-down">
             <div class="col-3 border-end border-4"></div>
-            <div class="col border-up border-3 input-message">
-                <input type="text" name="message-box" id="message-box" placeholder="Type a message">
-                <img src="send-msg.png">
+            <div class="col border-up border-3 input-message" >
+                <form id="message-form">
+                    <input type="text" name="message-box" id="message-input" placeholder="Type a message">
+                    <button type="submit" id="message-btn"> submit </button>
+                </form>
             </div>
         </div>
     </div>
-
-    <script src="chat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script type = "module" src="chat.js"></script>
   </body>
 </html>
