@@ -96,6 +96,11 @@ form.sign-up-form {
     font-weight: 500;
     color: #000000;
 }
+.input-field img {
+    width: 30px;
+    cursor: pointer;
+    padding-right: 10px;
+}
 .btn {
     width: 150px;
     height: 50px;
@@ -110,6 +115,10 @@ form.sign-up-form {
 }
 .btn:hover {
     background: #0e99d4;
+}
+#invalid-login{
+    color: red;
+    font-size: small;
 }
 .panels-container {
     position: absolute;
