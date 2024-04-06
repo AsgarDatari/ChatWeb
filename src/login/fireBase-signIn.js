@@ -35,7 +35,8 @@ submitSup.addEventListener("click", function (event) {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      window.location.href="./loginFailed.html";
+      // window.location.href="./loginFailed.html";
+      document.getElementById('invalid-login').innerHTML = "entered login credintial are invalid";
     });
 
 });

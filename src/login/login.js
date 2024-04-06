@@ -15,3 +15,30 @@ sign_up_btn2.addEventListener("click", () => {
 sign_in_btn2.addEventListener("click", () => {
     container.classList.remove("sign-up-mode2");
 });
+
+let eyeicon = document.getElementById("eyeicon");
+let passwordSin = document.getElementById("passwordSin");
+
+let eyeiconSup = document.getElementById("eyeiconSup");
+let passwordSup = document.getElementById("passwordSup");
+
+eyeicon.onclick = function(){
+    if(passwordSin.type == "password"){
+        passwordSin.type = "text";
+        eyeicon.src = "eye-open.png"
+    }
+    else{
+        passwordSin.type = "password";
+        eyeicon.src = "eye-close.png"  
+    }
+}
+eyeiconSup.onclick = function(){
+    if(passwordSup.type == "password"){
+        passwordSup.type = "text";
+        eyeiconSup.src = "eye-open.png"
+    }
+    else{
+        passwordSup.type = "password";
+        eyeiconSup.src = "eye-close.png"  
+    }
+}
