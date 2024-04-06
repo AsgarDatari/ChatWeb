@@ -1,0 +1,1 @@
+window.onload = document.getElementById("profile-username").innerHTML = localStorage.getItem("userName");

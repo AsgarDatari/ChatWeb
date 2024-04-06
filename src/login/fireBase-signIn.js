@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
+var userName_signIn = '';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -30,6 +31,8 @@ submitSup.addEventListener("click", function (event) {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
+      userName_signIn = user.email;
+      localStorage.setItem("userName", userName_signIn);
       window.location.href="../chat/chat.html";
     })
     .catch((error) => {
