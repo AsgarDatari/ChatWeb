@@ -9,12 +9,6 @@
 .container-fluid {
     height: 100vh;
 }
-.red {
-    border: 2px solid red;
-}
-.blue {
-    border: 2px solid blue;
-}
 .row-up {
     height: 10vh;
 }
@@ -41,6 +35,8 @@ h3 {
 h4 {
     font-size: 1.3rem;
     font-family: 'Roboto', sans-serif;
+    color: #202124;
+    /* color: #000000; */
     padding: 0px 0px;
     margin: 0px 0px 0px 0px;
 
@@ -48,7 +44,7 @@ h4 {
 p {
     font-size: 0.9rem;
     font-family: 'Poppins', sans-serif;
-    color: #a1a1a3;
+    color: #5f6368;
     padding: 0px;
 }
 .user-search {
@@ -79,6 +75,10 @@ p {
 .header-colour {
     background-color: #edf4fc;
 }
+.user-box {
+    position: relative;
+    overflow: hidden;
+}
 .user-list {
     height: 70px;
     margin: 8px 1px 1px 0px;
@@ -92,11 +92,41 @@ p {
 }
 .user-list:hover{
     background-color: #d7e9fd;
+    border: 1px solid #96d6f8;
 }
 .status {
     font-size: small;
 }
+.chat-box {
+    position: relative;
+    height: calc(100%);
+    overflow-y: auto;
+    background: #E7E7E7;
+}
+.message {
+    background: #fff;
+    margin: 10px 0px 20px 0px;
+    padding: 0px 0px 8px 10px;
+    max-width: 60%;
+    border-radius: 0px 10px 10px 10px;
+}
+.message::marker {
+    color: #E7E7E7;
+}
+.message img {
+    max-width:45px;
+    max-height:45px; 
+    margin-top:-25px;
+    margin-left:-55px;
+    float:left;
+}
 .input-message {
+    width: 100%;
+    background: #edf4fc;
+    display: flex;
+    align-items: center;
+}
+#message-form {
     width: 100%;
     background: #edf4fc;
     display: flex;
@@ -106,18 +136,25 @@ p {
     padding-left: 16px;
     background: #ffffff;
     border: none;
+    width: 1000px;
     outline: none;
-    width: 90%;
     height: 44px;
     font-size: 18px;
     font-weight: 500;
     color: #53585c;
-    border-radius: 12px;
-    margin-left: 18px;
+    border-radius: 8px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    margin-left: 16px;
 }
-.input-message img {
-    width: 30px;
-    margin-left: 20px;
+#message-box {
+    display: inline-block;
+}
+#message-btn {
+    flex: right;
+    width: 45px;
+    height: 30px;
     cursor: pointer;
-    transform: rotate(330deg);
+    background-color: #edf4fc;
+    margin: 0px;
 }

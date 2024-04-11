@@ -16,7 +16,7 @@
             <div class="col-3 border-end border-bottom border-4 header-colour">
                 <h2>ChatWeb</h2>
             </div>
-            <div class="col border-bottom border-3 header-colour">
+            <div class="col border-bottom border-3 header-colour header">
                 <h3>Live Chat</h3> 
                 
                 <label id="profile-username">hi</label>
@@ -30,9 +30,10 @@
                     <input type="text" id="search" name="search" placeholder="Search">
                     <img src="search-icon.png">
                 </div>
+                <div class="user-box">
                 <div class="row user-list">
                     <h4>Asgar Datari</h4>
-                    <p>&#128308; offline</p>
+                    <p>&#128308; Offline</p>
                 </div>
                 <div class="row user-list">
                     <h4>Mrunal Shah</h4>
@@ -46,9 +47,10 @@
                     <h4>Malav shah</h4>
                     <p>Offline</p>
                 </div>
+                </div>
             </div>
 
-            <div class="col border-up border-bottom border-3">
+            <div class="col border-up border-bottom border-3 chat-box">
                 <!-- messages will display here -->
                 <ul id="messages"></ul>
                 <!-- form to send message -->
@@ -57,10 +59,10 @@
 
         <div class="row row-down">
             <div class="col-3 border-end border-4"></div>
-            <div class="col border-up border-3 input-message" >
+            <div class="col border-up border-3 input-message">
                 <form id="message-form">
-                    <input type="text" name="message-box" id="message-input" placeholder="Type a message">
-                    <button type="submit" id="message-btn"> submit </button>
+                    <input type="text" name="message-box" id="message-box" placeholder="Type a message">
+                    <input type="image" src="send-msg.png" alt="submit" id="message-btn">
                 </form>
             </div>
         </div>
