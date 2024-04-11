@@ -14,13 +14,13 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const username = localStorage.getItem("userName");
 
-document.getElementById("message-form").addEventListener("submit", sendMessage);
+document.getElementById("message-btn").addEventListener("click", sendMessage);
 
 function sendMessage(e) {
   e.preventDefault();
 
   const timestamp = Date.now();
-  const messageInput = document.getElementById("message-input");
+  const messageInput = document.getElementById("message-box");
   const message = messageInput.value;
 
   messageInput.value = "";
@@ -39,8 +39,8 @@ const fetchChat = db.ref("messages/");
 
 fetchChat.on("child_added", function (snapshot) {
   const messages = snapshot.val();
-  const message = `<li class=${
+  const message = `<li class= message ${
     username === messages.username ? "sent" : "receive"
-  }><span>${messages.username}: </span>${messages.message}</li>`;
+  }><img src="user-icon-png.png"><span>${messages.username}: <br></span>${messages.message}</li>`;
   document.getElementById("messages").innerHTML += message;
 });
