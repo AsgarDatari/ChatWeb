@@ -26,13 +26,12 @@ submitSup.addEventListener("click", function (event) {
 
     const email = document.getElementById("emailSup").value;
     const password = document.getElementById("passwordSup").value;
+    const userName = document.getElementById("userNameSup").value;
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        const userName = document.getElementById("userNameSup").value;
-        localStorage.setItem("userName", userName);
 
         // Add user data to Firestore
         const usersCollection = collection(db, 'users');
@@ -41,8 +40,8 @@ submitSup.addEventListener("click", function (event) {
             username: userName,
             email: email
         })
-        .then((docRef) => {
-            console.log("User data added to Firestore");
+        .then(() => {
+            localStorage.setItem("userName", userName);
             window.location.href = "../chat/chat.html";
         })
         .catch((error) => {
@@ -55,3 +54,5 @@ submitSup.addEventListener("click", function (event) {
         // Handle error here
     });
 });
+
+
