@@ -6,18 +6,18 @@ var userName_signIn = '';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
-    authDomain: "chatweb-awful.firebaseapp.com",
-    databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "chatweb-awful",
-    storageBucket: "chatweb-awful.appspot.com",
-    messagingSenderId: "693279532996",
-    appId: "1:693279532996:web:cf6404be59950947e26691"
-  };
+  apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
+  authDomain: "chatweb-awful.firebaseapp.com",
+  databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "chatweb-awful",
+  storageBucket: "chatweb-awful.appspot.com",
+  messagingSenderId: "693279532996",
+  appId: "1:693279532996:web:cf6404be59950947e26691"
+};
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
 
 const submitSup = document.getElementById("signInBtn");
 submitSup.addEventListener("click", function (event) {
@@ -31,7 +31,7 @@ submitSup.addEventListener("click", function (event) {
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      userName_signIn = useruser.displayName;
+      userName_signIn = user.email;
       localStorage.setItem("userName", userName_signIn);
       window.location.href="../chat/chat.html";
     })
@@ -41,5 +41,4 @@ submitSup.addEventListener("click", function (event) {
       // window.location.href="./loginFailed.html";
       document.getElementById('invalid-login').innerHTML = "entered login credintial are invalid";
     });
-
 });
