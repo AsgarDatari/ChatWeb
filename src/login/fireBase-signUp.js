@@ -5,15 +5,16 @@ import { getFirestore, collection, addDoc } from "https://www.gstatic.com/fireba
 var userName_signUp = '';
 
 // Your web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
-        authDomain: "chatweb-awful.firebaseapp.com",
-        databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "chatweb-awful",
-        storageBucket: "chatweb-awful.appspot.com",
-        messagingSenderId: "693279532996",
-        appId: "1:693279532996:web:cf6404be59950947e26691"
-      };
+const firebaseConfig = {
+    apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
+    authDomain: "chatweb-awful.firebaseapp.com",
+    databaseURL:
+      "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "chatweb-awful",
+    storageBucket: "chatweb-awful.appspot.com",
+    messagingSenderId: "693279532996",
+    appId: "1:693279532996:web:cf6404be59950947e26691",
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -42,6 +43,14 @@ submitSup.addEventListener("click", function (event) {
         })
         .then(() => {
             localStorage.setItem("userName", userName);
+            localStorage.setItem("email", email);
+
+            const statusCollection = collection(db, 'status');
+            addDoc(statusCollection, {
+                email: user.email,
+                status: "Online",
+            })
+
             window.location.href = "../chat/chat.html";
         })
         .catch((error) => {
