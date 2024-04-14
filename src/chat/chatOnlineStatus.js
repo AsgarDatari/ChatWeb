@@ -29,7 +29,7 @@ function onlineFunction(e){
     let uname = "";
     db_status.forEach(async (doc) => {
         uemail = doc.data().email;
-        uname = doc.data().uname;
+        uname = doc.data().username;
         console.log(uemail);
         const message = `<li class="onlineUser">
             ${uemail} <ul>
