@@ -25,16 +25,18 @@ function sendMessage(e) {
   const messageInput = document.getElementById("message-box");
   const message = messageInput.value;
 
-  messageInput.value = "";
-
+  if(message !== ''){
+    messageInput.value = "";
+    
+    db.ref("messages/" + timestamp).set({
+      username,
+      message,
+    });
+  }
+  
   document
-    .getElementById("messages")
-    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-
-  db.ref("messages/" + timestamp).set({
-    username,
-    message,
-  });
+  .getElementById("messages")
+  .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }
 
 const fetchChat = db.ref("messages/");
