@@ -20,7 +20,7 @@
                 <h3>Live Chat</h3> 
                 
                 <label id="profile-username">hi</label>
-
+                <input id="signOutButton" type="submit">
             </div>
         </div>
 
@@ -30,24 +30,14 @@
                     <input type="text" id="search" name="search" placeholder="Search">
                     <img src="search-icon.png">
                 </div>
+
+                <input id="submitButton" type="submit">
                 <div class="user-box">
-                <div class="row user-list">
-                    <h4>Asgar Datari</h4>
-                    <p>&#128308; Offline</p>
-                </div>
-                <div class="row user-list">
-                    <h4>Mrunal Shah</h4>
-                    <p>&#x1F7E2; Online</p>
-                </div>
-                <div class="row user-list">
-                    <h4>Aaquif Qureshi</h4>
-                    <p>Online</p>
-                </div>
-                <div class="row user-list">
-                    <h4>Malav shah</h4>
-                    <p>Offline</p>
-                </div>
-                </div>
+                     <div class="row user-list">
+                         <ul id="onlineUsers" class="onlineUsers-list"></ul>
+                     </div>
+                 </div>    
+
             </div>
 
             <div class="col border-up border-bottom border-3 chat-box">
@@ -70,6 +60,9 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
     <script type = "module" src="chat.js"></script>
+    <script type="module" src="chatOnlineStatus.js"></script>
   </body>
 </html>
+

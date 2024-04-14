@@ -78,7 +78,18 @@ p {
   position: relative;
   overflow: hidden;
 }
-.user-list {
+/* .user-list {
+  height: 70px;
+  margin: 8px 1px 1px 0px;
+  padding: 12px 0px 0px 12px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+} */
+.onlineUser {
   height: 70px;
   margin: 8px 1px 1px 0px;
   padding: 12px 0px 0px 12px;
@@ -89,6 +100,8 @@ p {
   display: flex;
   align-items: center;
 }
+
+
 .user-list:hover {
   background-color: #d7e9fd;
   border: 1px solid #96d6f8;

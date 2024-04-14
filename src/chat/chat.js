@@ -1,3 +1,7 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getFirestore, collection, where, query, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+
 window.onload = document.getElementById("profile-username").innerHTML =
   localStorage.getItem("userName");
 
@@ -57,3 +61,6 @@ fetchChat.on("child_added", function (snapshot) {
   .getElementById("messages")
   .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 });
+
+
+

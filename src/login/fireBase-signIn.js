@@ -7,11 +7,12 @@ import { getFirestore, collection, where, query, getDocs } from "https://www.gst
 const firebaseConfig = {
   apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
   authDomain: "chatweb-awful.firebaseapp.com",
-  databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
+  databaseURL:
+    "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "chatweb-awful",
   storageBucket: "chatweb-awful.appspot.com",
   messagingSenderId: "693279532996",
-  appId: "1:693279532996:web:cf6404be59950947e26691"
+  appId: "1:693279532996:web:cf6404be59950947e26691",
 };
 
 
@@ -43,6 +44,24 @@ submitSup.addEventListener("click", async function (event) {
         });
 
        localStorage.setItem("userName", username);
+       localStorage.setItem("email", email);
+
+       const statusCollection = collection(db, 'status');
+       const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
+       if(db_status.empty){
+           throw new Error("No user found with this email");
+       }
+       let uname = "";
+       db_status.forEach(async (doc) => {
+           uname = doc.data().username;
+           console.log(uname);
+           const docRef = doc.ref;
+           await updateDoc(docRef, {
+               status: "Online"
+           });
+       });
+       
+
         window.location.href = "../chat/chat.html";
 
     } catch (error) {
