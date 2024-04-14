@@ -46,12 +46,10 @@ submitSup.addEventListener("click", function (event) {
         })
         .catch((error) => {
             console.error("Error adding user data to Firestore: ", error);
-            // Handle error here
         });
     })
     .catch((error) => {
         console.error("Error signing up:", error.message);
-        // Handle error here
         document.getElementById('invalid-signUp').innerHTML = "User already exits";
     });
 });
