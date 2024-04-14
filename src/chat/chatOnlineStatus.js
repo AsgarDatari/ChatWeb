@@ -31,9 +31,9 @@ function onlineFunction(e){
         uemail = doc.data().email;
         uname = doc.data().username;
         console.log(uemail);
-        const message = `<li class="onlineUser">
-            ${uemail} <ul>
-                        <li> ${uname}</li>
+        const message = `<li class="onlineUsername">
+           <b> ${uname} </b> <ul>
+                        <li class="onlineEmail"> ${uemail}</li>
                     </ul>
         </li>`;
         document.getElementById("onlineUsers").innerHTML += message;
