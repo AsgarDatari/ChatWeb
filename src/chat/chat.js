@@ -42,13 +42,18 @@ function sendMessage(e) {
 const fetchChat = db.ref("messages/");
 
 fetchChat.on("child_added", function (snapshot) {
-  const messages = snapshot.val();
-  const message = `<li class="message ${
-    username === messages.username ? "sent" : "receive"
-  }">
-  <img src="user-icon-png.png"><span>${messages.username}: <br></span>${
-    messages.message
-  }</li>`;
+  {
+    const messages = snapshot.val();
+    const message = `<li class="message ${
+      username === messages.username ? "sent" : "receive"
+    }">
+    <img src="user-icon-png.png"><span>${messages.username}: <br></span>${
+      messages.message
+    }</li>`;
 
-  document.getElementById("messages").innerHTML += message;
+    document.getElementById("messages").innerHTML += message;
+  }
+  document
+  .getElementById("messages")
+  .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 });
