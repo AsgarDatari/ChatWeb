@@ -51,7 +51,6 @@ submitSup.addEventListener("click", function (event) {
     .catch((error) => {
         console.error("Error signing up:", error.message);
         document.getElementById('invalid-signUp').innerHTML = "User already exits";
-
     });
 });
 
