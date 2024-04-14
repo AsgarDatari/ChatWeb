@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="login.css">
+<<<<<<< Updated upstream:src/login.html
+=======
+    <script type="module" src="fireBase-signUp.js" defer></script>
+    <script type="module" src="fireBase-signIn.js" defer></script>
+    <script type="module" src="forgot-password.js" defer></script>
+>>>>>>> Stashed changes:src/login/login.html
     <title>signin-signup</title>
 </head>
 <body>
@@ -19,9 +25,19 @@
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
+<<<<<<< Updated upstream:src/login.html
                     <input type="password" placeholder="Password">
                 </div>
                 <input type="submit" value="Login" class="btn">
+=======
+                    <input type="password" placeholder="Password" id="passwordSin">
+                    <img src="eye-close.png" id="eyeicon"><br>
+                </div>
+                <p id="invalid-login"></p>
+                <input type="submit" value="Forgot Password" class="btn" id="forgot_password">
+                
+                <input type="submit" value="Login" class="btn" id="signInBtn">
+>>>>>>> Stashed changes:src/login/login.html
                 <p class="account-text">Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a></p>
             </form>
             <form action="" class="sign-up-form">
