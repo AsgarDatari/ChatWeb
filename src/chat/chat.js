@@ -5,6 +5,7 @@ import { getFirestore, collection, where, query, getDocs } from "https://www.gst
 window.onload = document.getElementById("profile-username").innerHTML =
   localStorage.getItem("userName");
 
+  const email = localStorage.getItem("email");
 const firebaseConfig = {
   apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
   authDomain: "chatweb-awful.firebaseapp.com",
@@ -34,6 +35,7 @@ function sendMessage(e) {
     
     db.ref("messages/" + timestamp).set({
       username,
+      email,
       message,
     });
   }
@@ -51,7 +53,7 @@ fetchChat.on("child_added", function (snapshot) {
     const message = `<li class="message ${
       username === messages.username ? "sent" : "receive"
     }">
-    <img src="user-icon-png.png"><span>${messages.username}: <br></span>${
+    <img src="user-icon-png.png"><span> <b> ${messages.username} </b> <sup> ${messages.email} </sup> <br> </span>${
       messages.message
     }</li>`;
 

@@ -25,12 +25,16 @@ function onlineFunction(e){
     if (db_status.empty) {
         throw new Error("No user found with this email");
     }
+    let uemail = "";
     let uname = "";
     db_status.forEach(async (doc) => {
-        uname = doc.data().email;
-        console.log(uname);
+        uemail = doc.data().email;
+        uname = doc.data().uname;
+        console.log(uemail);
         const message = `<li class="onlineUser">
-            ${uname}
+            ${uemail} <ul>
+                        <li> ${uname}</li>
+                    </ul>
         </li>`;
         document.getElementById("onlineUsers").innerHTML += message;
 

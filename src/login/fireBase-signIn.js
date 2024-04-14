@@ -58,7 +58,7 @@ submitSup.addEventListener("click", async function (event) {
             console.log(username);
         });
 
-       localStorage.setItem("userName", username);
+       localStorage.setItem("username", username);
        localStorage.setItem("email", email);
 
        window.location.href = "../chat/chat.html";

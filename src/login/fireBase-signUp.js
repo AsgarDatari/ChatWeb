@@ -42,12 +42,13 @@ submitSup.addEventListener("click", function (event) {
             email: email
         })
         .then(() => {
-            localStorage.setItem("userName", userName);
+            localStorage.setItem("username", userName);
             localStorage.setItem("email", email);
 
             const statusCollection = collection(db, 'status');
             addDoc(statusCollection, {
                 email: user.email,
+                username: userName,
                 status: "Online",
             })
 
