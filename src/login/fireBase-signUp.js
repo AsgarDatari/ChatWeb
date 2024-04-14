@@ -36,7 +36,7 @@ submitSup.addEventListener("click", function (event) {
         // Add user data to Firestore
         const usersCollection = collection(db, 'users');
         addDoc(usersCollection, {
-            userId: user.uid, // Using Firebase Authentication UID
+            userId: user.uid,
             username: userName,
             email: email
         })

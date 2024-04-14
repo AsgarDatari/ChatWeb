@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-
-var userName_signIn = '';
+import { getFirestore, collection, where, query, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,27 +17,36 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 const submitSup = document.getElementById("signInBtn");
-submitSup.addEventListener("click", function (event) {
+submitSup.addEventListener("click", async function (event) {
     event.preventDefault();
 
     const email = document.getElementById("emailSin").value;
     const password = document.getElementById("passwordSin").value;
 
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      userName_signIn = user.email;
-      localStorage.setItem("userName", userName_signIn);
-      window.location.href="../chat/chat.html";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // window.location.href="./loginFailed.html";
-      document.getElementById('invalid-login').innerHTML = "entered login credintial are invalid";
-    });
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        // Signed in
+        const user = userCredential.user;
+
+        const db_username = await getDocs(query(collection(db, "users"), where("email", "==", user.email)));
+        if(db_username.empty){
+          throw new Error("No user found with this email");
+        }
+        let username = "";
+        db_username.forEach((doc) => {
+            username = doc.data().username;
+            console.log(username);
+        });
+
+       localStorage.setItem("userName", username);
+        window.location.href = "../chat/chat.html";
+
+    } catch (error) {
+        console.error("Error signing in:", error.message);
+        document.getElementById('invalid-login').innerHTML = "Entered login credentials are invalid";
+    }
 });
