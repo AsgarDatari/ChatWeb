@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-import { getFirestore, collection, where, query, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+import { getFirestore, collection, where, query, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,6 +32,21 @@ submitSup.addEventListener("click", async function (event) {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         // Signed in
         const user = userCredential.user;
+        
+        const statusCollection = collection(db, 'status');
+        const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
+        if(db_status.empty){
+            throw new Error("No user found with this email");
+        }
+        let uname = "";
+        db_status.forEach(async (doc) => {
+            uname = doc.data().email;
+            console.log(uname);
+            const docRef = doc.ref;
+            await updateDoc(docRef, {
+                status: "Online"
+            });
+        });
 
         const db_username = await getDocs(query(collection(db, "users"), where("email", "==", user.email)));
         if(db_username.empty){
@@ -46,23 +61,7 @@ submitSup.addEventListener("click", async function (event) {
        localStorage.setItem("userName", username);
        localStorage.setItem("email", email);
 
-       const statusCollection = collection(db, 'status');
-       const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
-       if(db_status.empty){
-           throw new Error("No user found with this email");
-       }
-       let uname = "";
-       db_status.forEach(async (doc) => {
-           uname = doc.data().username;
-           console.log(uname);
-           const docRef = doc.ref;
-           await updateDoc(docRef, {
-               status: "Online"
-           });
-       });
-       
-
-        window.location.href = "../chat/chat.html";
+       window.location.href = "../chat/chat.html";
 
     } catch (error) {
         console.error("Error signing in:", error.message);
