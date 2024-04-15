@@ -207,16 +207,8 @@ ol {
   margin: 0px;
 }
 .message.sent {
-  color: #ffffff;
-  background-color: #00A3FF;
-  float: right;
-  border-radius: 10px 0px 10px 10px;
-}
-.message.sent span {
-  opacity: 0%;
-}
-.message.sent img {
-  opacity: 0%;
+  background-color: #0d0b0b;
+  color: red;
 }
 
 .message.receive {
