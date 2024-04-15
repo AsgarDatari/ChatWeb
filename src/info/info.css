@@ -1,39 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
 .info-height {
-    align-items: center;
-    height: 80vh;
+  align-items: center;
+  height: 80vh;
 }
 .info-tagLine {
-    font-size: 4.5rem;
-    line-height: 5.5rem;
-    font-weight: 700;
-    font-family:  3.75rem / 4.5rem"Helvetica Neue", "Arial Nova", sans-serif;
-    letter-spacing: -0.02em;
-    color: #323948;
-
+  font-size: 4.5rem;
+  line-height: 5.5rem;
+  font-weight: 700;
+  font-family: 3.75rem / 4.5rem "Helvetica Neue", "Arial Nova", sans-serif;
+  letter-spacing: -0.02em;
+  color: #323948;
 }
 .info-grd {
-    background-image: linear-gradient(80deg, #2c67f2, #62cff4);
-    background-clip: text;
-    color: transparent;
-    float: right;
+  background-image: linear-gradient(80deg, #2c67f2, #62cff4);
+  background-clip: text;
+  color: transparent;
+  float: right;
 }
 .info-p {
-    font-size: 22px;
-    color: rgb(63, 69, 81);
-    line-height: 2.375rem;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 500;
+  font-size: 22px;
+  color: rgb(63, 69, 81);
+  line-height: 2.375rem;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
 }
 .info-img {
-    width: 700px;
+  width: 700px;
 }
 .heading-logo {
-    font-size: 2.6rem;
-    color: #083671;
-    font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
+  font-size: 2.6rem;
+  color: #083671;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
