@@ -154,6 +154,7 @@ ol {
   padding: 5px 10px 10px 10px;
   max-width: 50%;
   border-radius: 0px 10px 10px 10px;
+  overflow-wrap: break-word;
 }
 .message b {
   font-family: "Poppins", sans-serif;
