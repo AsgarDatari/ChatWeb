@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
 * {
   margin: 0;
@@ -50,7 +50,8 @@ p {
   color: #5f6368;
   padding: 0px;
 }
-ul, ol {
+ul,
+ol {
   list-style-type: none;
   padding-left: 0;
 }
@@ -125,12 +126,12 @@ ul, ol {
   font-size: 18px;
   color: #1a1a1a;
   font-weight: 500;
-  font-family: 'Roboto', 'sans-serif';
+  font-family: "Roboto", "sans-serif";
 }
 .onlineUsername ul {
   margin: 0px;
   padding: 0px;
-  font-family: 'Poppins', 'sans-serif';
+  font-family: "Poppins", "sans-serif";
   color: #6e6f70;
   opacity: 0%;
   transition: 0.2s ease-out;
@@ -205,16 +206,15 @@ ul, ol {
   margin: 0px;
 }
 .message.sent {
-    background-color: #0d0b0b;
-    color: red;
-  }
-  
-.message.receive {
-    background-color: #ffffff;
-    color: #3c3c3c;
-    font-weight: 100;
-    font-size: 16px;
-    font-family: 'Open San',sans-serif;
-    font-weight: 500;
+  background-color: #0d0b0b;
+  color: red;
 }
-  
+
+.message.receive {
+  background-color: #ffffff;
+  color: #3c3c3c;
+  font-weight: 100;
+  font-size: 16px;
+  font-family: "Open San", sans-serif;
+  font-weight: 500;
+}

@@ -1,67 +1,80 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="chat.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="chat.css" />
     <title>Hello, world!</title>
   </head>
   <body>
     <div class="container-fluid" id="chat">
-        <div class="row row-up">
-            <div class="col-3 border-end border-bottom border-4 header-colour">
-                <h2>ChatWeb</h2>
+      <div class="row row-up">
+        <div class="col-3 border-end border-bottom border-4 header-colour">
+          <h2>ChatWeb</h2>
+        </div>
+        <div class="col border-bottom border-3 header-colour header">
+          <h3>Live Server Chat</h3>
+          <label id="profile-username">hi</label>
+          <input id="signOutButton" type="submit" value="Sign Out" />
+          <img src="../../assets/log-out.png" alt="log-out" id="singOut-icon" />
+        </div>
+      </div>
+
+      <div class="row row-middle">
+        <div class="col-3 border-end border-4">
+          <div class="row user-search">
+            <input type="text" id="search" name="search" placeholder="Search" />
+            <img src="../../assets/search-icon.png" />
+            <img src="../../assets/refresh-arrow.png" alt="refresh-arrow" id="refresh-btn" />
+          </div>
+          <div class="user-box">
+            <div class="row user-list">
+              <ul id="onlineUsers" class="onlineUsers-list"></ul>
             </div>
-            <div class="col border-bottom border-3 header-colour header">
-                <h3>Live Server Chat</h3>
-                <label id="profile-username">hi</label>
-                <input id="signOutButton" type="submit" value="Sign Out">
-                <img src="log-out.png" alt="log-out" id="singOut-icon">
-            </div>
+          </div>
         </div>
 
-        <div class="row row-middle">
-            <div class="col-3 border-end border-4">
-                <div class="row user-search">
-                    <input type="text" id="search" name="search" placeholder="Search">
-                    <img src="search-icon.png">
-                    <img src="refresh-arrow.png" alt="refresh-arrow" id="refresh-btn">
-                </div>
-                <div class="user-box">
-                     <div class="row user-list">
-                         <ul id="onlineUsers" class="onlineUsers-list"></ul>
-                     </div>
-                 </div>    
+        <div class="col border-up border-bottom border-3 chat-box">
+          <!-- messages will display here -->
+          <ul id="messages" class="chat-messages"></ul>
 
-            </div>
-
-            <div class="col border-up border-bottom border-3 chat-box">
-                <!-- messages will display here -->
-                <ul id="messages" class="chat-messages"></ul>
-
-                <!-- form to send message -->
-            </div>
+          <!-- form to send message -->
         </div>
+      </div>
 
-        <div class="row row-down">
-            <div class="col-3 border-end border-4"></div>
-            <div class="col border-up border-3 input-message">
-                <form id="message-form">
-                    <input type="text" name="message-box" id="message-box" placeholder="Type a message">
-                    <input type="image" src="send-msg.png" alt="submit" id="message-btn">
-                </form>
-            </div>
+      <div class="row row-down">
+        <div class="col-3 border-end border-4"></div>
+        <div class="col border-up border-3 input-message">
+          <form id="message-form">
+            <input
+              type="text"
+              name="message-box"
+              id="message-box"
+              placeholder="Type a message"
+            />
+            <input
+              type="image"
+              src="../../assets/send-msg.png"
+              alt="submit"
+              id="message-btn"
+            />
+          </form>
         </div>
+      </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-    <script type = "module" src="chat.js"></script>
+    <script type="module" src="chat.js"></script>
     <script type="module" src="chatOnlineStatus.js"></script>
   </body>
 </html>
-
