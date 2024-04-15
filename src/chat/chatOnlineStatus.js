@@ -32,7 +32,8 @@ function onlineFunction(e){
         uname = doc.data().username;
         console.log(uemail);
         const message = `<li class="onlineUsername">
-           <b> ${uname} </b> <ul>
+           <b> ${uname} </b>
+                    <ul type="none">
                         <li class="onlineEmail"> ${uemail}</li>
                     </ul>
         </li>`;
@@ -61,7 +62,8 @@ function offlineFuntion(e){
     });
 }
 
-document.getElementById("submitButton").addEventListener("click", onlineFunction);
+document.getElementById("refresh-btn").addEventListener("click", onlineFunction);
 
 document.getElementById("signOutButton").addEventListener("click", offlineFuntion);
+document.getElementById("singOut-icon").addEventListener("click", offlineFuntion);
 
