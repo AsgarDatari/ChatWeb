@@ -116,7 +116,7 @@ ol {
 }
 .onlineUsername {
   height: 70px;
-  margin: 8px 1px px 0px;
+  margin: 8px 1px 10px 0px;
   padding: 10px 0px 0px 20px;
   background-color: #f7f7f7;
   border-radius: 20px;
@@ -152,7 +152,7 @@ ol {
 .message {
   margin: 40px 8px 20px 34px;
   padding: 5px 10px 10px 10px;
-  max-width: 50%;
+  max-width: 45%;
   border-radius: 0px 10px 10px 10px;
   overflow-wrap: break-word;
 }
@@ -207,13 +207,18 @@ ol {
   margin: 0px;
 }
 .message.sent {
+  text-align: right;
   color: #ffffff;
   background-color: #00A3FF;
-  float: right;
   border-radius: 10px 0px 10px 10px;
+  margin: 40px 8px 20px 34px;
+  padding: 5px 15px 10px 10px;
+  overflow-wrap: break-word;
+  margin-left: auto;
 }
-.message.sent span {
-  opacity: 0%;
+.message.sent span p {
+  padding-right: 10px;
+  display: block;
 }
 .message.sent img {
   opacity: 0%;
@@ -226,4 +231,5 @@ ol {
   font-size: 16px;
   font-family: "Open San", sans-serif;
   font-weight: 500;
+  margin-right: auto;
 }
