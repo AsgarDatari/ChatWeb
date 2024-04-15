@@ -118,7 +118,11 @@ form.sign-up-form {
 }
 #invalid-login{
     color: red;
-    font-size: small;
+    font-size: 15px;
+}
+#invalid-signUp{
+    color: red;
+    font-size: 15px;
 }
 .panels-container {
     position: absolute;
@@ -233,4 +237,15 @@ form.sign-up-form {
     form {
         width: 90%;
     }
+}
+.forget-btn {
+    background-color: #fff;
+    color: #2d8fd0;
+    border: none;
+    font-size: 15px;
+    font-weight: 400;
+}
+.forget-btn:hover {
+    color: #636363;
+    text-decoration: underline;
 }

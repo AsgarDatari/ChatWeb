@@ -25,20 +25,20 @@ let passwordSup = document.getElementById("passwordSup");
 eyeicon.onclick = function(){
     if(passwordSin.type == "password"){
         passwordSin.type = "text";
-        eyeicon.src = "eye-open.png"
+        eyeicon.src = "../../assets/eye-open.png"
     }
     else{
         passwordSin.type = "password";
-        eyeicon.src = "eye-close.png"  
+        eyeicon.src = "../../assets/eye-close.png"  
     }
 }
 eyeiconSup.onclick = function(){
     if(passwordSup.type == "password"){
         passwordSup.type = "text";
-        eyeiconSup.src = "eye-open.png"
+        eyeiconSup.src = "../../assets/eye-open.png"
     }
     else{
         passwordSup.type = "password";
-        eyeiconSup.src = "eye-close.png"  
+        eyeiconSup.src = "../../assets/eye-close.png"  
     }
 }

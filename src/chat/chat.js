@@ -1,11 +1,20 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-import { getFirestore, collection, where, query, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import {
+  getFirestore,
+  collection,
+  where,
+  query,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 window.onload = document.getElementById("profile-username").innerHTML =
-  localStorage.getItem("userName");
+  localStorage.getItem("username");
 
-  const email = localStorage.getItem("email");
+const email = localStorage.getItem("email");
 const firebaseConfig = {
   apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
   authDomain: "chatweb-awful.firebaseapp.com",
@@ -19,7 +28,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
-const username = localStorage.getItem("userName");
+const username = localStorage.getItem("username");
 
 document.getElementById("message-btn").addEventListener("click", sendMessage);
 
@@ -30,19 +39,19 @@ function sendMessage(e) {
   const messageInput = document.getElementById("message-box");
   const message = messageInput.value;
 
-  if(message !== ''){
+  if (message !== "") {
     messageInput.value = "";
-    
+
     db.ref("messages/" + timestamp).set({
       username,
       email,
       message,
     });
   }
-  
+
   document
-  .getElementById("messages")
-  .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    .getElementById("messages")
+    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 }
 
 const fetchChat = db.ref("messages/");
@@ -53,16 +62,14 @@ fetchChat.on("child_added", function (snapshot) {
     const message = `<li class="message ${
       username === messages.username ? "sent" : "receive"
     }">
-    <img src="user-icon-png.png"><span> <b> ${messages.username} </b> <sup class="supMessageEmail"> ${messages.email} </sup> <br> </span>${
-      messages.message
-    }</li>`;
-
+    <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
+      messages.username
+    }?backgroundColor=b6e3f4,c0aede,d1d4f9"> <span> <b> ${
+      messages.username
+    } </b><br> </span>${messages.message}</li>`;
     document.getElementById("messages").innerHTML += message;
   }
   document
-  .getElementById("messages")
-  .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    .getElementById("messages")
+    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 });
-
-
-

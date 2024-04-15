@@ -42,8 +42,6 @@ submitSup.addEventListener("click", function (event) {
             email: email
         })
         .then(() => {
-            localStorage.setItem("username", userName);
-            localStorage.setItem("email", email);
 
             const statusCollection = collection(db, 'status');
             addDoc(statusCollection, {
@@ -51,7 +49,9 @@ submitSup.addEventListener("click", function (event) {
                 username: userName,
                 status: "Online",
             })
-
+            localStorage.setItem("username", userName);
+            localStorage.setItem("email", email);
+            
             window.location.href = "../chat/chat.html";
         })
         .catch((error) => {
