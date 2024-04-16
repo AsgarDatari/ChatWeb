@@ -56,6 +56,7 @@ function sendMessage(e) {
 // Fetch messages from Firebase Realtime Database
 const fetchChat = db.ref("messages/");
 
+<<<<<<< Updated upstream
 fetchChat.on("child_added", function(snapshot) {
   const messages = snapshot.val();
   const messageTime = new Date(messages.timestamp);
@@ -75,4 +76,25 @@ fetchChat.on("child_added", function(snapshot) {
   document.getElementById("messages").innerHTML += message;
 
   document.getElementById("messages").scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+=======
+fetchChat.on("child_added",  function (snapshot) {
+  {
+    const messages = snapshot.val();
+    const messageTime = new Date(messages.timestamp);
+    const formattedTime = messageTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const message = `<li class="message ${
+      username === messages.username ? "sent" : "receive"
+    }">
+    <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
+      messages.username
+    }?backgroundColor=b6e3f4,c0aede,d1d4f9"> <span> <b> ${
+      messages.username
+    } </b><br> </span>${messages.message}<br>
+    <small>${formattedTime}</small> </li>`;
+    document.getElementById("messages").innerHTML += message;
+  }
+  document
+    .getElementById("messages")
+    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+>>>>>>> Stashed changes
 });
