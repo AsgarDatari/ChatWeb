@@ -233,3 +233,11 @@ ol {
   font-weight: 500;
   margin-right: auto;
 }
+
+.messageDate{
+  background-color: red;
+}
+
+.chatTime{
+  background-color: red;
+}

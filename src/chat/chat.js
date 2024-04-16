@@ -46,6 +46,7 @@ function sendMessage(e) {
       username,
       email,
       message,
+      timestamp
     });
   }
 
@@ -56,20 +57,43 @@ function sendMessage(e) {
 
 const fetchChat = db.ref("messages/");
 
-fetchChat.on("child_added", function (snapshot) {
-  {
-    const messages = snapshot.val();
-    const message = `<li class="message ${
-      username === messages.username ? "sent" : "receive"
-    }">
+fetchChat.on("child_added", function(snapshot) {
+  const messages = snapshot.val();
+  const date = new Date(messages.timestamp);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const seconds = date.getSeconds();
+  const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+
+  const formattedDateTime = `${hours}:${minutes}`;
+
+  const containerId = `day${day}-month${month}-year${year}`;
+  let container = document.getElementById(containerId);
+  if (!container) {
+    container = document.createElement("div");
+    container.id = containerId;
+    container.className = "message-container";
+    container.innerHTML = `<h3 class = "messageDate" align= "center" >${dayOfWeek} | ${day}-${month}-${year}</h3>`;
+    document.getElementById("messages").appendChild(container);
+  }
+
+  const message = `<li class="message ${
+    username === messages.username ? "sent" : "receive"
+  }">
     <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
       messages.username
     }?backgroundColor=b6e3f4,c0aede,d1d4f9"> <span> <b> ${
-      messages.username
-    } </b><br> </span>${messages.message}</li>`;
-    document.getElementById("messages").innerHTML += message;
-  }
-  document
-    .getElementById("messages")
-    .scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    messages.username
+  } </b><br> </span>${messages.message}<br> <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
+  container.innerHTML += message;
+
+  container.scrollIntoView({
+    behavior: "smooth",
+    block: "end",
+    inline: "nearest"
+  });
 });
+
