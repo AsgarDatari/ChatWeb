@@ -46,7 +46,7 @@ function sendMessage(e) {
       username,
       email,
       message,
-      timestamp
+      timestamp,
     });
   }
 
@@ -57,16 +57,16 @@ function sendMessage(e) {
 
 const fetchChat = db.ref("messages/");
 
-fetchChat.on("child_added", function(snapshot) {
+fetchChat.on("child_added", function (snapshot) {
   const messages = snapshot.val();
   const date = new Date(messages.timestamp);
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
   const seconds = date.getSeconds();
-  const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+  const dayOfWeek = date.toLocaleDateString("en-US", { weekday: "long" });
 
   const formattedDateTime = `${hours}:${minutes}`;
 
@@ -80,44 +80,28 @@ fetchChat.on("child_added", function(snapshot) {
     document.getElementById("messages").appendChild(container);
   }
 
-  // const message = `<li class="message ${
-  //   username === messages.username ? "sent" : "receive"
-  // }">
-  //   <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
-  //     messages.username
-  //   }?backgroundColor=b6e3f4,c0aede,d1d4f9"> <span> <b> ${
-  //   messages.username
-  // } </b><br> </span>${messages.message}<br> <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
-  // container.innerHTML += message;
+  let userID = messages.username;
+  var colors = ["#0D3D56", "#0F5B78", "#117899", "#1496BB", "#5CA794", "#A3B86C", "#EBC944", "#EDAA38", "#F08C2D", "#F26D21", "#D94E20", "#C02F1D"];
+  var colorIndex = userID.length % colors.length;
 
-  let messageClass;
-  if (username === messages.username) {
-      messageClass = "sent";
-      const message = `<li class="message ${messageClass}">
-      <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9">
-      ${messages.message}<br>
-      <sup class="chatTime">${formattedDateTime}</sup></li>`;
-      container.innerHTML += message;
-  } else {
-      messageClass = "receive";
-
-      //LOOK here MRUNAL
-      let userID = messages.username;
-      var colors = ['#25D366', '#F5CB39', '#0085C3', '#FF9900', '#ED1C16'];
-      var colorIndex = userID.length % colors.length;
-      const message = `<li class="message ${messageClass}">
-
-      <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9">
-      <span style="color: ${colors[colorIndex]};"><b>${messages.username}</b><br></span>
-      ${messages.message}<br>
-      <sup class="chatTime">${formattedDateTime}</sup></li>`;
-      container.innerHTML += message;
-  }
+  const message = `<li class="message ${
+    username === messages.username ? "sent" : "receive"
+  }">
+    ${
+      username !== messages.username
+        ? `<span style = "color: ${colors[colorIndex]}"> <b>${messages.username}</b> </span> <br>`
+        : ""
+    }
+    <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
+      messages.username
+    }?backgroundColor=b6e3f4,c0aede,d1d4f9"> 
+    ${messages.message}<br>
+    <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
+  container.innerHTML += message;
 
   container.scrollIntoView({
     behavior: "smooth",
     block: "end",
-    inline: "nearest"
+    inline: "nearest",
   });
 });
-
