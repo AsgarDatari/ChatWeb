@@ -36,3 +36,12 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
 }
+
+.heading-logo a{
+  text-decoration: none;
+  color: #083671;
+}
+
+.heading-logo a:hover{
+  color: #083671;
+}
