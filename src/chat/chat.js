@@ -80,39 +80,20 @@ fetchChat.on("child_added", function(snapshot) {
     document.getElementById("messages").appendChild(container);
   }
 
-  // const message = `<li class="message ${
-  //   username === messages.username ? "sent" : "receive"
-  // }">
-  //   <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
-  //     messages.username
-  //   }?backgroundColor=b6e3f4,c0aede,d1d4f9"> <span> <b> ${
-  //   messages.username
-  // } </b><br> </span>${messages.message}<br> <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
-  // container.innerHTML += message;
-
-  let messageClass;
-  if (username === messages.username) {
-      messageClass = "sent";
-      const message = `<li class="message ${messageClass}">
-      <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9">
+  let userID = messages.username;
+  var colors = ['#25D366', '#F5CB39', '#0085C3', '#FF9900', '#ED1C16'];
+  var colorIndex = userID.length % colors.length;
+  
+  const message = `<li class="message ${
+      username === messages.username ? "sent" : "receive"}">
+      ${
+        username !== messages.username ? `<span style="color: ${colors[colorIndex]}"><b>${messages.username}</b></span><br>` : ""
+      }
+      <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9"> 
       ${messages.message}<br>
-      <sup class="chatTime">${formattedDateTime}</sup></li>`;
-      container.innerHTML += message;
-  } else {
-      messageClass = "receive";
-
-      //LOOK here MRUNAL
-      let userID = messages.username;
-      var colors = ['#25D366', '#F5CB39', '#0085C3', '#FF9900', '#ED1C16'];
-      var colorIndex = userID.length % colors.length;
-      const message = `<li class="message ${messageClass}">
-
-      <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9">
-      <span style="color: ${colors[colorIndex]};"><b>${messages.username}</b><br></span>
-      ${messages.message}<br>
-      <sup class="chatTime">${formattedDateTime}</sup></li>`;
-      container.innerHTML += message;
-  }
+      <sup class="chatTime">${formattedDateTime}</sup>
+  </li>`;
+  container.innerHTML += message;
 
   container.scrollIntoView({
     behavior: "smooth",

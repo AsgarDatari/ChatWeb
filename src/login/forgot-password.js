@@ -42,6 +42,6 @@ fp_button.addEventListener("click", async function(event) {
             const errorMessage = error.message;
             console.error("Error sending password reset email:", errorMessage);
             alert("Error: " + errorMessage);
-        });
+        });
     }
 });
