@@ -45,14 +45,16 @@ function onlineFunction(e) {
     uemail = doc.data().email;
     uname = doc.data().username;
     console.log(uemail);
-    const message = `<li class="onlineUsername">
-           <b> ${uname} </b>
-                    <ul type="none">
-                        <li class="onlineEmail"> ${uemail}</li>
-                    </ul>
-        </li>`;
-    document.getElementById("onlineUsers").innerHTML += message;
 
+    if(uname !== localStorage.getItem("username")){
+        const message = `<li class="onlineUsername">
+          <b> ${uname} </b>
+                  <ul type="none">
+                      <li class="onlineEmail"> ${uemail}</li>
+                  </ul>
+      </li>`;
+      document.getElementById("onlineUsers").innerHTML += message;
+    }
     const docRef = doc.ref;
     await updateDoc(docRef, { status: "Online" });
   });

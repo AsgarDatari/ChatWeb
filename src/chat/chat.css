@@ -259,3 +259,12 @@ ol {
   float: right;
   font-size: x-small;
 }
+
+#profile-username-label, #profile-username{
+  margin-top: 3%;
+  font-family: "Poppins", sans-serif;
+}
+
+#profile-username{
+  font-weight: bold;
+}
