@@ -150,10 +150,10 @@ ol {
   background: #efeeee;
 }
 .message {
-  margin: 40px 8px 20px 34px;
+  margin: 20px 8px 0px 34px;
   padding: 5px 10px 10px 10px;
   max-width: 45%;
-  border-radius: 0px 10px 10px 10px;
+  border-radius: 0px 8px 8px 8px;
   overflow-wrap: break-word;
 }
 .message b {
@@ -207,14 +207,18 @@ ol {
   margin: 0px;
 }
 .message.sent {
-  text-align: right;
+  text-align: left;
   color: #ffffff;
   background-color: #00A3FF;
-  border-radius: 10px 0px 10px 10px;
+  border-radius: 8px 0px 8px 8px;
   margin: 40px 8px 20px 34px;
-  padding: 5px 15px 10px 10px;
+  padding: 12px 15px 8px 15px;
   overflow-wrap: break-word;
   margin-left: auto;
+  font-size: 16px;
+  font-family: "Open San", sans-serif;
+  font-weight: 500;
+  padding-bottom: 16px;
 }
 .message.sent span p {
   padding-right: 10px;
@@ -232,12 +236,22 @@ ol {
   font-family: "Open San", sans-serif;
   font-weight: 500;
   margin-right: auto;
+  padding-bottom: 16px;
 }
 
 .messageDate{
-  background-color: red;
+  background-color: rgba(122, 118, 118, 0.25);
+  width: 160px;
+  font-size: 14px;
+  margin-left: 44%;
+  padding: 5px;
+  border-radius: 6px;
 }
 
 .chatTime{
-  background-color: red;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  float: right;
 }
