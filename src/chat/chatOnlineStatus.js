@@ -61,8 +61,6 @@ updateOnlineUsers();
 
 setInterval(updateOnlineUsers, 10000);
 
-document.getElementById("refresh-btn").addEventListener("click", updateOnlineUsers);
-
 
 const email = localStorage.getItem("email");
 const db_offline_check = await getDocs(
