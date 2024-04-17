@@ -103,12 +103,12 @@ fetchChat.on("child_added", function(snapshot) {
 
       //LOOK here MRUNAL
       let userID = messages.username;
-      var colors = ['#F5CB39', '#25D366', '#0085C3', '#FF9900', '#ED1C16'];
+      var colors = ['#25D366', '#F5CB39', '#0085C3', '#FF9900', '#ED1C16'];
       var colorIndex = userID.length % colors.length;
       const message = `<li class="message ${messageClass}">
 
       <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username}?backgroundColor=b6e3f4,c0aede,d1d4f9">
-      <span style="color: ${colorIndex};"><b>${messages.username}</b><br></span>
+      <span style="color: ${colors[colorIndex]};"><b>${messages.username}</b><br></span>
       ${messages.message}<br>
       <sup class="chatTime">${formattedDateTime}</sup></li>`;
       container.innerHTML += message;
