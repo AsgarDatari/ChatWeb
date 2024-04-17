@@ -13,7 +13,6 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
   authDomain: "chatweb-awful.firebaseapp.com",
@@ -25,40 +24,45 @@ const firebaseConfig = {
   appId: "1:693279532996:web:cf6404be59950947e26691",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const statusCollectionRef = collection(db, "status");
-const db_status = await getDocs(
-  query(statusCollectionRef, where("status", "==", "Online"))
-);
-function onlineFunction(e) {
-  document.getElementById("onlineUsers").innerHTML = "";
-  e.preventDefault();
+
+async function updateOnlineUsers() {
+  const db_status = await getDocs(query(statusCollectionRef, where("status", "==", "Online")));
+  const onlineUsersElement = document.getElementById("onlineUsers");
+  onlineUsersElement.innerHTML = "";
+
   if (db_status.empty) {
     throw new Error("No user found with this email");
   }
-  let uemail = "";
-  let uname = "";
-  db_status.forEach(async (doc) => {
-    uemail = doc.data().email;
-    uname = doc.data().username;
-    console.log(uemail);
 
-    if(uname !== localStorage.getItem("username")){
-        const message = `<li class="onlineUsername">
-          <b> ${uname} </b>
-                  <ul type="none">
-                      <li class="onlineEmail"> ${uemail}</li>
-                  </ul>
+  db_status.forEach(async (doc) => {
+    const uemail = doc.data().email;
+    const uname = doc.data().username;
+
+    if (uname !== localStorage.getItem("username")) {
+      const message = `<li class="onlineUsername">
+        <b>${uname}</b>
+        <ul type="none">
+          <li class="onlineEmail">${uemail}</li>
+        </ul>
       </li>`;
-      document.getElementById("onlineUsers").innerHTML += message;
+      onlineUsersElement.innerHTML += message;
     }
+
     const docRef = doc.ref;
     await updateDoc(docRef, { status: "Online" });
   });
 }
+
+updateOnlineUsers();
+
+setInterval(updateOnlineUsers, 10000);
+
+document.getElementById("refresh-btn").addEventListener("click", updateOnlineUsers);
+
 
 const email = localStorage.getItem("email");
 const db_offline_check = await getDocs(
@@ -80,9 +84,6 @@ function offlineFuntion(e) {
   });
 }
 
-document
-  .getElementById("refresh-btn")
-  .addEventListener("click", onlineFunction);
 
 document
   .getElementById("signOutButton")
