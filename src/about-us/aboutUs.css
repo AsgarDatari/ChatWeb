@@ -32,3 +32,8 @@
 .heading-logo a:hover{
   color: #083671;
 }
+
+.team-image img{
+  width: 1000px;
+  height: 600px;
+}
