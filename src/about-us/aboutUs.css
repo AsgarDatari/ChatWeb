@@ -36,4 +36,28 @@
 .team-image img{
   width: 1000px;
   height: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+#teamTitle{
+  font-family: "Poppins", sans-serif;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.text-team{
+  font-family: "Roboto", sans-serif;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+#title-teamMembers{
+  margin-bottom: 6%;
+}
+
+.row{
+  margin-bottom: 6%;
 }
