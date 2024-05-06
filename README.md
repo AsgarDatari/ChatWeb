@@ -24,7 +24,7 @@ The Project came to running state due to the hardwork of 3 :
 ![image](https://github.com/AsgarDatari/ChatWeb/assets/108453611/222254f8-3ea1-44c2-bda9-dc73ef678e2f)
 
 5. Meet The Team 
-   1. Asgar Datari [ Frontend Designer ]
-   2. Aaquif Qureshi [ Backend Engineer ]
-   3. Mrunal Shah [ Backend Architect & Mentor ]
+   1. Asgar Datari [ Frontend Designer ] {Between the two }
+   2. Aaquif Qureshi [ Backend Engineer ] { Standing in left }
+   3. Mrunal Shah [ Backend Architect & Mentor ] { Sitting in Right because always right }
 ![image](https://github.com/AsgarDatari/ChatWeb/assets/108453611/7ae5261b-6ce2-4166-a974-8aaa5f058c03)
