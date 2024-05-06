@@ -2,6 +2,10 @@
  
 A ChatWeb is a web application used to communicate globally with people.
 
+Deployed on Vercel : chatweb-awful.vercel.app
+
+YOU CAN SIGNUP WITH ANY RANDOM EMAIL OR ANY EMAIL, WE CANT SEE THE PASSWORD, WE USE ETHICAL TECHNIQUES TO SOLVE THE PROBLEM.
+
 The Project came to running state due to the hardwork of 3 :
 
    1. Asgar Datari [ Frontend Designer ]
