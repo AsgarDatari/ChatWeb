@@ -9,7 +9,7 @@ YOU CAN SIGNUP WITH ANY RANDOM EMAIL OR ANY EMAIL, WE CANT SEE THE PASSWORD, WE 
 The Project came to running state due to the hardwork of 3 :
 
    1. Asgar Datari [ Frontend Designer & Team Leader ]
-   2. Aaquif Qureshi [ Backend Engineer & DataBase Engineer ]
+   2. Aaquif Qureshi [ Backend Engineer & Database Engineer ]
    3. Mrunal Shah [ Backend Architect & Mentor ]
 
 ##### ScreenShots #####
