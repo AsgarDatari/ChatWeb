@@ -1,17 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
-
 .info-height {
   align-items: center;
   height: 80vh;
 }
+
 .info-tagLine {
   font-size: 2.60rem;
   line-height: 5.5rem;
@@ -20,12 +14,14 @@
   letter-spacing: -0.02em;
   color: #323948;
 }
+
 .info-grd {
   background-image: linear-gradient(80deg, #2c67f2, #62cff4);
   background-clip: text;
   color: transparent;
-  float: right;
+  float: left;
 }
+
 .info-p {
   font-size: 22px;
   color: rgb(63, 69, 81);
@@ -33,9 +29,11 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
 }
+
 .info-img {
   width: 700px;
 }
+
 .heading-logo {
   font-size: 2.6rem;
   color: #083671;
@@ -44,11 +42,44 @@
   text-decoration: none;
 }
 
-.heading-logo a{
+.heading-logo a {
   text-decoration: none;
   color: #083671;
 }
 
-.heading-logo a:hover{
+.heading-logo a:hover {
   color: #083671;
+}
+
+@media (max-width:700px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    position: absolute;
+    right: 5%;
+  }
+
+  .info-grd {
+    position: absolute;
+    top: 30%;
+    background-image: none;
+    color: #62cff4;
+  }
+
+  .red {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .info-tagLine {
+    font-size: 1.7rem;
+  }
+
+  .red img {
+    text-align: center;
+    width: 350px;
+  }
 }

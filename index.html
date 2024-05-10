@@ -1,52 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>ChatWeb</title>
-  </head>
-  <body>
-    <nav>
-      <div class="container main-nav flex">
-        <a href="index.html">
-          <h2>ChatWeb</h2>
-        </a>
-        <div class="nav-links">
-          <ul class="flex">
-            <li>
-              <a href="./src/info/info.html" class="hover-links"> ChatWeb ? </a>
-            </li>
-            <li>
-              <a href="./src/about-us/about-us.html" class="hover-links">
-                Meet the Team 
-              </a>
-            </li>
-            <li>
-              <a
-                href="./src/login/login.html"
-                class="hover-links primary-button"
-                > Lets Chat </a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
 
-    <header>
-      <div class="container header-section flex">
-        <div class="header-left">
-          <h1>Let's</h1>
-          <div class="animated-text">
-            <span></span>
-          </div>
-          <a href="./src/login/login.html" class="get-started">Get Started</a>
-        </div>
-        <div class="header-right">
-          <img src="./assets/chat-illustration.jpeg" alt="hero image" />
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>ChatWeb</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container main-nav flex">
+      <a href="index.html">
+        <h2>ChatWeb</h2>
+      </a>
+      <div class="nav-links">
+        <ul class="flex">
+          <li>
+            <a href="./src/info/info.html" class="hover-links hideOnMobile">ChatWeb</a>
+          </li>
+          <li>
+            <a href="./src/about-us/about-us.html" class="hover-links hideOnMobile">Meet the Team</a>
+          </li>
+          <li>
+            <a href="./src/login/login.html" class="hover-links primary-button hideOnMobile">Lets Chat</a>
+          </li>
+          <li onclick="showSidebar()" class="menu-button">
+            <img style="width: 26px;" src="/assets/menubar_img.png" alt="back">
+          </li>
+        </ul>
       </div>
-    </header>
-  </body>
+    </div>
+  </nav>
+
+  <ul class="flex side-bar">
+    <li onclick="hideSidebar()">
+      <img style="width: 26px;" src="/assets/close_sidebar.png" alt="close">
+    </li>
+    <li>
+      <a href="./src/info/info.html" class="hover-links">ChatWeb</a>
+    </li>
+    <li>
+      <a href="./src/about-us/about-us.html" class="hover-links">Meet the Team</a>
+    </li>
+    <li>
+      <a href="./src/login/login.html" class="hover-links primary-button">Lets Chat</a>
+    </li>
+  </ul>
+
+  <header>
+    <div class="container header-section flex">
+      <div class="header-left">
+        <h1>Let's</h1>
+        <div class="animated-text">
+          <span></span>
+        </div>
+        <a href="./src/login/login.html" class="get-started">Get Started</a>
+      </div>
+      <div class="header-right">
+        <img src="./assets/chat-illustration.jpeg" alt="hero image" />
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function showSidebar() {
+      const sidebar = document.querySelector('.side-bar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar() {
+      const hidebar = document.querySelector('.side-bar')
+      hidebar.style.display = 'none'
+    }
+  </script>
+</body>
+
 </html>

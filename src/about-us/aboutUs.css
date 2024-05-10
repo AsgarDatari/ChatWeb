@@ -1,27 +1,29 @@
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
+p {
+  font-family: 'Poppins', sans-serif;
+}
 
-/* .red {
-  border: 1px solid red;
-  height: 70vh;
-} */
+h2 {
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .ass-image img {
-  justify-content: center;
-  width: 500px;
+  width: 300px;
 }
+
 .aaq-images img {
-  margin-left: 50px;
-  width: 460px;
+  width: 300px;
 }
+
 .mru-image img {
-  margin-top: 20px;
-  justify-content: center;
-  width: 500px;
+  width: 300px;
 }
 
 .heading-logo {
@@ -32,40 +34,66 @@
   text-decoration: none;
 }
 
-.heading-logo a{
+.heading-logo a {
   text-decoration: none;
   color: #083671;
 }
 
-.heading-logo a:hover{
+.heading-logo a:hover {
   color: #083671;
 }
 
-.team-image img{
-  width: 1000px;
-  height: 600px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+.team-image img {
+  width: 100%;
+  height: auto;
 }
 
-#teamTitle{
+#teamTitle {
   font-family: "Poppins", sans-serif;
   font-size: xx-large;
   font-weight: bold;
 }
 
-.text-team{
+.text-team {
   font-family: "Roboto", sans-serif;
   margin-top: 2%;
   margin-bottom: 5%;
 }
 
-#title-teamMembers{
+#title-teamMembers {
   margin-bottom: 6%;
 }
 
-.row{
+.row {
   margin-bottom: 6%;
+}
+
+.note {
+  font-size: 12px;
+}
+
+@media (max-width:700px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    position: absolute;
+    right: 5%;
+  }
+
+  .team-image {
+    width: 100%;
+    height: auto;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  .image {
+    text-align: center;
+    width: 200px;
+    height: auto;
+    margin: 20px 0px 0px 0px;
+    padding: 0%;
+  }
 }

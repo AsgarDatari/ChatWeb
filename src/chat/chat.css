@@ -1,12 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+@media (min-width:320px) {
+  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
+}
+
+@media (min-width:480px) {
+  /* smartphones, Android phones, landscape iPhone */
+}
+
+@media (min-width:600px) {
+  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+@media (min-width:801px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media (min-width:1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+
+@media (min-width:1281px) {
+  /* hi-res laptops and desktops */
+}
 
 * {
   margin: 0;
@@ -14,21 +31,27 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .container-fluid {
   height: 100vh;
 }
+
 .row-up {
   height: 10vh;
 }
+
 .row-middle {
   height: 80vh;
 }
+
 .row-down {
   height: 10vh;
 }
+
 .header-colour {
   background-color: #edf4fc;
 }
+
 h2 {
   font-size: 2rem;
   color: #083671;
@@ -36,6 +59,7 @@ h2 {
   font-family: "Poppins", sans-serif;
   margin: 18px 0px 0px 12px;
 }
+
 h3 {
   font-size: 1.5rem;
   opacity: 80%;
@@ -43,6 +67,7 @@ h3 {
   font-family: "Poppins", sans-serif;
   margin: 20px 0px 0px 8px;
 }
+
 h4 {
   font-size: 1.3rem;
   font-family: "Roboto", sans-serif;
@@ -51,17 +76,20 @@ h4 {
   padding: 0px 0px;
   margin: 0px 0px 0px 0px;
 }
+
 p {
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
   color: #5f6368;
   padding: 0px;
 }
+
 ul,
 ol {
   list-style-type: none;
   padding-left: 0;
 }
+
 .user-search {
   width: 100%;
   height: 30px;
@@ -72,6 +100,7 @@ ol {
   display: flex;
   align-items: center;
 }
+
 .user-search input {
   flex: 5;
   background: none;
@@ -82,16 +111,19 @@ ol {
   font-weight: 500;
   color: #6d747a;
 }
+
 .user-search img {
   width: 40px;
   border: none;
 }
+
 .header {
   position: relative;
 }
+
 #signOutButton {
   position: absolute;
-  right: 3.5%;
+  right: 6.5%;
   top: 30%;
   width: 80px;
   height: 30px;
@@ -103,9 +135,16 @@ ol {
   size: 16px;
   font-weight: 500;
 }
+
+#singOut-icon {
+  position: absolute;
+  top: 36%;
+}
+
 #signOutButton:hover {
   opacity: 100%;
 }
+
 .header img {
   width: 20px;
   height: 20px;
@@ -114,13 +153,16 @@ ol {
   top: 36%;
   opacity: 60%;
 }
+
 .header img:hover {
   opacity: 100%;
 }
+
 .user-box {
   position: relative;
   overflow: hidden;
 }
+
 .onlineUsername {
   height: 70px;
   margin: 8px 1px 10px 0px;
@@ -129,12 +171,14 @@ ol {
   border-radius: 20px;
   box-shadow: none;
 }
+
 .onlineUsername b {
   font-size: 18px;
   color: #1a1a1a;
   font-weight: 500;
   font-family: "Roboto", "sans-serif";
 }
+
 .onlineUsername ul {
   margin: 0px;
   padding: 0px;
@@ -143,19 +187,23 @@ ol {
   opacity: 0%;
   transition: 0.2s ease-out;
 }
+
 .onlineUsername ul:hover {
   opacity: 100%;
 }
+
 .onlineUsername:hover {
   background-color: #d7e9fd;
   border: 1px solid #96d6f8;
 }
+
 .chat-box {
   position: relative;
   height: calc(100%);
   overflow-y: auto;
   background: #E8EBF7;
 }
+
 .message {
   margin: 20px 8px 0px 34px;
   padding: 5px 10px 10px 10px;
@@ -163,14 +211,17 @@ ol {
   border-radius: 0px 8px 8px 8px;
   overflow-wrap: break-word;
 }
+
 .message b {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 500;
 }
+
 .message::marker {
   color: #e7e7e7;
 }
+
 .message img {
   max-width: 35px;
   max-height: 35px;
@@ -178,18 +229,21 @@ ol {
   float: left;
   border-radius: 50%;
 }
+
 #message-form {
   width: 100%;
   background: #edf4fc;
   display: flex;
   align-items: center;
 }
+
 .input-message {
   width: 100%;
   background: #edf4fc;
   display: flex;
   align-items: center;
 }
+
 .input-message input {
   border: none;
   outline: none;
@@ -202,9 +256,11 @@ ol {
   margin: 5px 0px 8px 16px;
   padding-left: 16px;
 }
+
 #message-box {
   display: inline-block;
 }
+
 #message-btn {
   flex: right;
   width: 45px;
@@ -213,6 +269,7 @@ ol {
   background-color: #edf4fc;
   margin: 0px;
 }
+
 .message.sent {
   text-align: left;
   color: #ffffff;
@@ -227,10 +284,12 @@ ol {
   font-weight: 500;
   padding-bottom: 16px;
 }
+
 .message.sent span p {
   padding-right: 10px;
   display: block;
 }
+
 .message.sent img {
   opacity: 0%;
 }
@@ -246,7 +305,7 @@ ol {
   padding-bottom: 16px;
 }
 
-.messageDate{
+.messageDate {
   background-color: #E8EBF7;
   width: 200px;
   font-size: 14px;
@@ -258,7 +317,7 @@ ol {
   padding-top: 1%;
 }
 
-.chatTime{
+.chatTime {
   font-family: "Poppins", sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -267,11 +326,28 @@ ol {
   font-size: x-small;
 }
 
-#profile-username-label, #profile-username{
+#profile-username-label,
+#profile-username {
   margin-top: 3%;
   font-family: "Poppins", sans-serif;
 }
 
-#profile-username{
+#profile-username {
   font-weight: bold;
+}
+
+@media (max-width:700px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .chat-box {
+    width: 100%;
+  }
+
+  .input-message {
+    width: 100%;
+    display: flex;
+    align-items: end;
+  }
 }

@@ -1,99 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../index.css" />
-    <link rel="stylesheet" href="aboutUs.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <title>About Us</title>
-  </head>
-  <body>
-    <nav>
-      <div class="container main-nav flex">
-        <h2 class="heading-logo"><a href="/index.html">ChatWeb</a></h2>
-        <div class="nav-links">
-          <ul class="flex">
-            <li><a href="../../index.html" class="hover-links">Home</a></li>
-            <li><a href="../info/info.html" class="hover-links"> ChatWeb ? </a></li>
-            <li>
-              <a href="../login/login.html" class="hover-links primary-button"
-                >Get Started</a
-              >
-            </li>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="aboutUs.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <title>About Us</title>
+</head>
+
+<body>
+  <nav>
+    <div class="container main-nav flex">
+      <h2 class="heading-logo"><a href="/index.html">ChatWeb</a></h2>
+      <div class="nav-links">
+        <ul class="flex">
+          <li><a href="../../index.html" class="hover-links hideOnMobile">Home</a></li>
+          <li><a href="../info/info.html" class="hover-links hideOnMobile">ChatWeb</a></li>
+          <li>
+            <a href="../login/login.html" class="hover-links primary-button hideOnMobile">Get Started</a>
+          </li>
+          <li onclick="showSidebar()" class="menu-button">
+            <img style="width: 26px;" src="/assets/menubar_img.png" alt="back">
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
+  <ul class="flex side-bar">
+    <li onclick="hideSidebar()">
+      <img style="width: 26px;" src="/assets/close_sidebar.png" alt="close">
+    </li>
+    <li><a href="../../index.html" class="hover-links">Home</a></li>
+    <li><a href="../info/info.html" class="hover-links">ChatWeb</a></li>
+    <li>
+      <a href="../login/login.html" class="hover-links primary-button">Get Started</a>
+    </li>
+  </ul>
 
-    <br>
-    <br>
-    <br>
+  <br>
+  <br>
+  <br>
 
 
-    <div class="container">
-      <div class="team">
-        <label id="teamTitle" > TEAM : </label>
-        <div class="col team-image">
-          <img src="../../assets/profile/team.jpg">
-          <p align="center"> <i> (taken by raspberry pi camera during our edge detection project. i had to hold it for seconds to get this image. F U N !) </i> </p>
-          <p class="text-team"> Our team is a dynamic blend of talent, with each member contributing their unique skills and expertise to bring our project to fruition. Asgar Datari, our front-end designer, brought creativity and precision to the table, crafting an engaging and user-friendly interface using HTML, CSS, and Bootstrap. His attention to detail ensured a seamless user experience on our chatting application website.
-            Backing Asgar's frontend brilliance, Aaquif Qureshi, our versatile backend engineer, infused life into our platform by implementing JavaScript and integrating Firebase for real-time communication. His technical prowess and problem-solving abilities were instrumental in ensuring the smooth functionality and performance of our website.
-            Guiding and mentoring the team through every stage of development was Mrunal, our backend architect and mentor. With their deep understanding of JavaScript and Firebase, Mrunal laid the foundation for our backend infrastructure, while also nurturing the growth and skill development of the entire team.
-            Together, Asgar, Aaquif, and Mrunal formed a cohesive unit, each playing a crucial role in this project. Their combined efforts resulted in a dynamic and fully functional chatting application website that promises to deliver an exceptional user experience on a global scale.
-             </p>
-        </div>
+  <div class="container">
+    <div class="team">
+      <label id="teamTitle"> TEAM : </label>
+      <div class="col team-image">
+        <img src="../../assets/profile/team.jpg">
+        <p> <i> (taken by raspberry pi camera during our edge detection project. i had to hold it for
+            seconds to get this image. F U N !) </i> </p>
+        <p class="text-team"> Our team is a dynamic blend of talent, with each member contributing their unique skills
+          and expertise to bring our project to fruition. Asgar Datari, our front-end designer, brought creativity and
+          precision to the table, crafting an engaging and user-friendly interface using HTML, CSS, and Bootstrap. His
+          attention to detail ensured a seamless user experience on our chatting application website.
+          Backing Asgar's frontend brilliance, Aaquif Qureshi, our versatile backend engineer, infused life into our
+          platform by implementing JavaScript and integrating Firebase for real-time communication. His technical
+          prowess and problem-solving abilities were instrumental in ensuring the smooth functionality and performance
+          of our website.
+          Guiding and mentoring the team through every stage of development was Mrunal, our backend architect and
+          mentor. With their deep understanding of JavaScript and Firebase, Mrunal laid the foundation for our backend
+          infrastructure, while also nurturing the growth and skill development of the entire team.
+          Together, Asgar, Aaquif, and Mrunal formed a cohesive unit, each playing a crucial role in this project. Their
+          combined efforts resulted in a dynamic and fully functional chatting application website that promises to
+          deliver an exceptional user experience on a global scale.
+        </p>
+      </div>
 
       <h1 id="title-teamMembers"> Team Members : </h1>
 
-      </div>
-      <div class="row">
-        <div class="col red">
-          <h1>Asgar Datari</h1>
-          <h4>Front End Designer & Team Leader </h4>
-          <p> 
-            Asgar Datari is a talented front-end designer who utilized his expertise in HTML, CSS, and Bootstrap to create a dynamic chatting application website. Asgar's design skills were instrumental in crafting an engaging and user-friendly platform where people can chat on a global scale. From structuring the layout to implementing responsive design elements, Asgar's attention to detail ensured a seamless user experience. Through his creativity and technical proficiency, Asgar played a crucial role in bringing the vision of the chatting app to life on the web.
-          </p>
-        </div>
-        <div class="col ass-image">
-          <img src="../../assets/profile/asg-img.png" alt="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col aaq-images">
-          <img src="../../assets/profile/aaquif-img.png" alt="">
-        </div>
-        <div class="col red">
-          <h1>Aaquif Qureshi</h1>
-          <h4>Backend Engineer & Database Engineer </h4>
-          <p>
-            Aaquif Qureshi, our backend engineer, played a pivotal role in bringing the website to life by implementing JavaScript on the front end and ensuring seamless functionality. With expertise in both front-end and back-end development, Aaquif integrated the necessary backend components to enable real-time communication and interaction on the chatting application. Through his skillful coding and problem-solving abilities, Aaquif ensured that the website not only looks great but also operates smoothly, providing users with a seamless and engaging experience. His contributions were instrumental in transforming the design into a fully functional and dynamic platform for global communication.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col red">
-          <h1> Mrunal Nirajkumar Shah </h1>
-          <h4>Back End Architect &  &lt; Mentor &gt;</h4>
-          <p>Our backend architect and mentor, whose leadership and expertise were instrumental in shaping the foundation of our website, deserves recognition. They spearheaded the development process by writing the core functionality in JavaScript, ensuring robustness and scalability. By leveraging Firebase, they brought real-time data synchronization and seamless backend services to our platform, enhancing its performance and reliability.
-
-            Beyond technical contributions, our mentor played a vital role in guiding and mentoring the team. Through their deep knowledge and experience, they provided invaluable insights, fostering a collaborative and innovative environment. Their mentorship not only elevated the technical skills of the team but also instilled a sense of confidence and purpose in each member.
-            
-            In summary, our backend architect and mentor's dual roles as a technical architect and mentor were indispensable in shaping our website into a dynamic and successful project. Their contributions laid the groundwork for a robust backend infrastructure while nurturing the growth and development of the team.
-            </p>
-        </div>
-        <div class="col mru-image">
-          <img src="../../assets/profile/mrunal-img.png" alt="">
-        </div>
-      </div>
-      <p align="center">
-         <b> We used chatGPT to generate all the text, i forgot to add my name while generating so they/them was used by chatGPT. (General knowledge) (full Stop) </b>
-       </p>
     </div>
-  </body>
+    <div class="row">
+      <div class="col red">
+        <h2>Asgar Datari</h2>
+        <h4>Front End Designer & Team Leader </h4>
+        <p>
+          Asgar Datari is a talented front-end designer who utilized his expertise in HTML, CSS, and Bootstrap to create
+          a dynamic chatting application website. Asgar's design skills were instrumental in crafting an engaging and
+          user-friendly platform where people can chat on a global scale. From structuring the layout to implementing
+          responsive design elements, Asgar's attention to detail ensured a seamless user experience. Through his
+          creativity and technical proficiency, Asgar played a crucial role in bringing the vision of the chatting app
+          to life on the web.
+        </p>
+      </div>
+      <div class="col ass-image image">
+        <img src="../../assets/profile/asg-img.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col red">
+        <h2>Aaquif Qureshi</h2>
+        <h4>Backend Engineer & Database Engineer </h4>
+        <p>
+          Aaquif Qureshi, our backend engineer, played a pivotal role in bringing the website to life by implementing
+          JavaScript on the front end and ensuring seamless functionality. With expertise in both front-end and back-end
+          development, Aaquif integrated the necessary backend components to enable real-time communication and
+          interaction on the chatting application. Through his skillful coding and problem-solving abilities, Aaquif
+          ensured that the website not only looks great but also operates smoothly, providing users with a seamless and
+          engaging experience. His contributions were instrumental in transforming the design into a fully functional
+          and dynamic platform for global communication.
+        </p>
+      </div>
+      <div class="col aaq-images image">
+        <img src="../../assets/profile/aaquif-img.png" alt="">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col red">
+        <h2> Mrunal Nirajkumar Shah </h2>
+        <h4>Back End Architect & &lt; Mentor &gt;</h4>
+        <p>Our backend architect and mentor, whose leadership and expertise were instrumental in shaping the foundation
+          of our website, deserves recognition. They spearheaded the development process by writing the core
+          functionality in JavaScript, ensuring robustness and scalability. By leveraging Firebase, they brought
+          real-time data synchronization and seamless backend services to our platform, enhancing its performance and
+          reliability.
+
+          Beyond technical contributions, our mentor played a vital role in guiding and mentoring the team. Through
+          their deep knowledge and experience, they provided invaluable insights, fostering a collaborative and
+          innovative environment. Their mentorship not only elevated the technical skills of the team but also instilled
+          a sense of confidence and purpose in each member.
+
+          In summary, our backend architect and mentor's dual roles as a technical architect and mentor were
+          indispensable in shaping our website into a dynamic and successful project. Their contributions laid the
+          groundwork for a robust backend infrastructure while nurturing the growth and development of the team.
+        </p>
+      </div>
+      <div class="col mru-image image">
+        <img src="../../assets/profile/mrunal-img.png" alt="">
+      </div>
+    </div>
+    <p class="note">
+      *We used chatGPT to generate all the text, i forgot to add my name while generating so they/them was used by
+      chatGPT. (General knowledge) (full Stop)
+    </p>
+  </div>
+
+  <script>
+    function showSidebar() {
+      const sidebar = document.querySelector('.side-bar')
+      sidebar.style.display = 'flex'
+    }
+    function hideSidebar() {
+      const hidebar = document.querySelector('.side-bar')
+      hidebar.style.display = 'none'
+    }
+  </script>
+</body>
+
 </html>
