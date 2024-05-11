@@ -1,30 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
 
-@media (min-width:320px) {
-  /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
-}
-
-@media (min-width:480px) {
-  /* smartphones, Android phones, landscape iPhone */
-}
-
-@media (min-width:600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
-}
-
-@media (min-width:801px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
-}
-
-@media (min-width:1025px) {
-  /* big landscape tablets, laptops, and desktops */
-}
-
-@media (min-width:1281px) {
-  /* hi-res laptops and desktops */
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -349,5 +325,38 @@ ol {
     width: 100%;
     display: flex;
     align-items: end;
+  }
+
+  #signOutButton {
+    position: absolute;
+    right: 15.5%;
+    top: 30%;
+    width: 80px;
+    height: 30px;
+    background-color: #edf4fc;
+    opacity: 60%;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    size: 16px;
+    font-weight: 500;
+  }
+  
+  #singOut-icon {
+    position: absolute;
+    top: 36%;
+  }
+  
+  #signOutButton:hover {
+    opacity: 100%;
+  }
+  
+  .header img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10.5%;
+    top: 36%;
+    opacity: 60%;
   }
 }
