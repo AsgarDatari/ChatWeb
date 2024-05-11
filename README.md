@@ -81,11 +81,14 @@ The project reached its running state due to the hard work of three individuals:
  <td> 
    Meet The Team :
    
-  1. Asgar Datari [ Frontend Designer ] {Between the two }
+  * Asgar Datari
+     * [ Frontend Designer & Team Leader ] {Between the two }
   
-  2. Aaquif Qureshi [ Backend Engineer ] { Standing in left }
+  * Aaquif Qureshi
+     * [ Backend Engineer & Database Engineer ] { Standing in left }
   
-  3. Mrunal Shah [ Backend Architect & Mentor ] { Sitting in Right because always right }
+  * Mrunal Shah
+     * [ Backend Architect & <b> Mentor </b>] { Sitting in Right because always right }
  </td>
  <td>
   
