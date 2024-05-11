@@ -67,12 +67,12 @@ const db_offline_check = await getDocs(
   query(statusCollectionRef, where("email", "==", email))
 );
 
-function offlineFuntion(e) {
+function offlineFunction(e) {
   e.preventDefault();
   if (db_offline_check.empty) {
-    throw new Error("No user found with this email");
+    console.error("No user found with this email"); // Providing an error message
+    return; // Exiting the function early if there's an error
   }
-  let uname = "";
   db_offline_check.forEach(async (doc) => {
     var uname = doc.data().email;
     console.log(uname);
@@ -82,9 +82,7 @@ function offlineFuntion(e) {
   });
 }
 
-document
-  .getElementById("signOutButton")
-  .addEventListener("click", offlineFuntion);
-document
-  .getElementById("singOut-icon")
-  .addEventListener("click", offlineFuntion);
+// Adding both click and touchstart event listeners
+document.getElementById("signOutButton").addEventListener("click", offlineFunction);
+document.getElementById("signOutButton").addEventListener("touchstart", offlineFunction);
+document.getElementById("singOut-icon").addEventListener("click", offlineFunction);
