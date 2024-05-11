@@ -113,7 +113,7 @@ What does ChatWeb Offer?
 </table>
 
 
-### We built this project for our College work, we enjoyed it. We had multiple emotions building it, like we had Fun, Stress, Fighting, Kicking, Stress, Chilling, F U N! and FUN!. 
+### We built this project for our College work, we enjoyed it. We had multiple emotions building it, like we had Fun, Stress, Fighting, Kicking, Stress, Chilling, F U N!, Kicking and FUN!. 
 
 ----
 ## THE PROJECT WORK HAS ENDED, AND THIS PROJECT IS NOW IN A BOX (FULL STOP) (Creepy Smiling)
