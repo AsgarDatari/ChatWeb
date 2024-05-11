@@ -328,7 +328,7 @@ ol {
   }
 
   #signOutButton {
-    position: absolute;
+    position: relative;
     right: 6.5%;
     top: 30%;
     width: 80px;
