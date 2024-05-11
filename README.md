@@ -1,6 +1,6 @@
 # ChatWeb
  
-A ChatWeb is a web application used for global communication with people.
+A ChatWeb is a Responsive web application used for global communication with people.
 
 Deployed on Vercel: chatweb-awful.vercel.app
 
@@ -16,12 +16,13 @@ The project reached its running state due to the hard work of three individuals:
 What does ChatWeb Offer?
  
  1. It is built using HTML, (CSS, Bootstrap), and JavaScript.
- 2. It uses Firebase for its real-time database for storing and retrieving data.
- 3. SignIn, SignUp, and SignOut are secure as we use Firebase's inbuilt functions.
- 4. We store users' online/offline status and allow other users to see who is online or offline. (Only available in desktop view)
- 5. A lot of details are present at every part of the code, if you notice.
- 6. A lot of bugs exist at every part of the code because we are broken.
- 7. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
+ 2. It is Responsive for Mobile, Tablets, Laptops, and more...
+ 3. It uses Firebase for its real-time database for storing and retrieving data.
+ 4. SignIn, SignUp, and SignOut are secure as we use Firebase's inbuilt functions.
+ 5. We store users' online/offline status and allow other users to see who is online or offline. (Only available in desktop view)
+ 6. A lot of details are present at every part of the code, if you notice.
+ 7. A lot of bugs exist at every part of the code because we are broken.
+ 8. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
 ----
 
 # ScreenShots of the ChatWeb Application in Desktop & Mobile View
