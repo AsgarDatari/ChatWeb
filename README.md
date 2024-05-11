@@ -1,16 +1,16 @@
 # ChatWeb
  
-A ChatWeb is a web application used to communicate globally with people.
+A ChatWeb is a web application used for global communication with people.
 
-Deployed on Vercel : chatweb-awful.vercel.app
+Deployed on Vercel: chatweb-awful.vercel.app
 
-YOU CAN SIGNUP WITH ANY RANDOM EMAIL OR ANY EMAIL, WE CANT SEE THE PASSWORD, WE USE ETHICAL TECHNIQUES TO SOLVE THE PROBLEM.
+<h3> You can sign up or sign in with any email, as this is just a project. We don't save or share your password because we store everything in Firebase, and we use Firebase's inbuilt functions for signing in, signing up, and signing out. </h3>
 
-The Project came to running state due to the hardwork of 3 :
+The project reached its running state due to the hard work of three individuals:"
 
-   1. Asgar Datari [ Frontend Designer & Team Leader ]
-   2. Aaquif Qureshi [ Backend Engineer & Database Engineer ]
-   3. Mrunal Shah [ Backend Architect & Mentor ]
+   * Asgar Datari [Frontend Designer & Team Leader]
+   * Aaquif Qureshi [Backend Engineer & Database Engineer]
+   * Mrunal Shah [Backend Architect & Mentor]
 
 ##### ScreenShots #####
 <table>
@@ -78,12 +78,17 @@ The Project came to running state due to the hardwork of 3 :
 </tr>
 
 <tr>
- <td colspan="2"> 
+ <td> 
    Meet The Team :
-   1. Asgar Datari [ Frontend Designer ] {Between the two }
-   2. Aaquif Qureshi [ Backend Engineer ] { Standing in left }
-   3. Mrunal Shah [ Backend Architect & Mentor ] { Sitting in Right because always right }
-
+   
+  1. Asgar Datari [ Frontend Designer ] {Between the two }
+  
+  2. Aaquif Qureshi [ Backend Engineer ] { Standing in left }
+  
+  3. Mrunal Shah [ Backend Architect & Mentor ] { Sitting in Right because always right }
+ </td>
+ <td>
+  
   ![image](https://github.com/AsgarDatari/ChatWeb/assets/108453611/7ae5261b-6ce2-4166-a974-8aaa5f058c03)
  
  </td>
