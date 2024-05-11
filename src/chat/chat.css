@@ -329,7 +329,7 @@ ol {
 
   #signOutButton {
     position: absolute;
-    right: 15.5%;
+    right: 6.5%;
     top: 30%;
     width: 80px;
     height: 30px;
@@ -338,25 +338,10 @@ ol {
     border: none;
     outline: none;
     font-family: "Poppins", sans-serif;
-    size: 16px;
+    font-size: 16px;
     font-weight: 500;
-  }
-  
-  #singOut-icon {
     position: absolute;
-    top: 36%;
-  }
-  
-  #signOutButton:hover {
-    opacity: 100%;
-  }
-  
-  .header img {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    right: 10.5%;
-    top: 36%;
-    opacity: 60%;
+    right: 6.5%;
+    top: 30%;
   }
 }
