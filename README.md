@@ -6,7 +6,7 @@ Deployed on Vercel: chatweb-awful.vercel.app
 
 <h3> You can sign up or sign in with any email, as this is just a project. We don't save or share your password because we store everything in Firebase, and we use Firebase's inbuilt functions for signing in, signing up, and signing out. </h3>
 
-The project reached its running state due to the hard work of three individuals:"
+The project reached its running state due to the hard work of three individuals:
 
    * Asgar Datari [Frontend Designer & Team Leader]
    * Aaquif Qureshi [Backend Engineer & Database Engineer]
