@@ -12,6 +12,18 @@ The project reached its running state due to the hard work of three individuals:
    * Aaquif Qureshi [Backend Engineer & Database Engineer]
    * Mrunal Shah [Backend Architect & Mentor]
 
+----
+What does ChatWeb Offer?
+ 
+ 1. It is built using HTML, (CSS, Bootstrap), and JavaScript.
+ 2. It uses Firebase for its real-time database for storing and retrieving data.
+ 3. SignIn, SignUp, and SignOut are secure as we use Firebase's inbuilt functions.
+ 4. We store users' online/offline status and allow other users to see who is online or offline. (Only available in desktop view)
+ 5. A lot of details are present at every part of the code, if you notice.
+ 6. A lot of bugs exist at every part of the code because we are broken.
+ 7. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
+----
+
 # ScreenShots of the ChatWeb Application in Desktop & Mobile View
 <table>
   <tr>
@@ -98,3 +110,9 @@ The project reached its running state due to the hard work of three individuals:
 </tr>
  
 </table>
+
+
+### We built this project for our College work, we enjoyed it. We had multiple emotions building it, like we had Fun, Stress, Fighting, Kicking, Stress, Chilling, F U N! and FUN!. 
+
+----
+## THE PROJECT WORK HAS ENDED, AND THIS PROJECT IS NOW IN A BOX.
