@@ -67,7 +67,7 @@ const db_offline_check = await getDocs(
   query(statusCollectionRef, where("email", "==", email))
 );
 
-function offlineFunction(e) {
+function offlineFuntion(e) {
   e.preventDefault();
   if (db_offline_check.empty) {
     throw new Error("No user found with this email");
@@ -82,10 +82,9 @@ function offlineFunction(e) {
   });
 }
 
-document.getElementById("signOutButton").addEventListener("touchstart", offlineFunction);
 document
   .getElementById("signOutButton")
-  .addEventListener("click", offlineFunction);
+  .addEventListener("click", offlineFuntion);
 document
   .getElementById("singOut-icon")
-  .addEventListener("click", offlineFunction);
+  .addEventListener("click", offlineFuntion);
