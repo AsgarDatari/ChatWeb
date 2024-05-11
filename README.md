@@ -12,7 +12,7 @@ The project reached its running state due to the hard work of three individuals:
    * Aaquif Qureshi [Backend Engineer & Database Engineer]
    * Mrunal Shah [Backend Architect & Mentor]
 
-##### ScreenShots #####
+# ScreenShots of the ChatWeb Application in Desktop & Mobile View
 <table>
   <tr>
    <td> Desktop View </td>
