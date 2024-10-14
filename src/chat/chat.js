@@ -94,7 +94,7 @@ fetchChat.on("child_added", function (snapshot) {
     }
     <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
       messages.username
-    }?backgroundColor=b6e3f4,c0aede,d1d4f9"> 
+    }&backgroundColor=b6e3f4,c0aede,d1d4f9"> 
     ${messages.message}<br>
     <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
   container.innerHTML += message;
