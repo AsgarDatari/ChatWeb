@@ -85,4 +85,4 @@ function offlineFunction(e) {
 // Adding both click and touchstart event listeners
 document.getElementById("signOutButton").addEventListener("click", offlineFunction);
 document.getElementById("signOutButton").addEventListener("touchstart", offlineFunction);
-document.getElementById("singOut-icon").addEventListener("click", offlineFunction);
+document.getElementById("signOut-icon").addEventListener("click", offlineFunction);

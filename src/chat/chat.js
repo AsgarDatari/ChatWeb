@@ -84,17 +84,16 @@ fetchChat.on("child_added", function (snapshot) {
   var colors = ["#0D3D56", "#0F5B78", "#117899", "#1496BB", "#5CA794", "#A3B86C", "#EBC944", "#EDAA38", "#F08C2D", "#F26D21", "#D94E20", "#C02F1D"];
   var colorIndex = userID.length % colors.length;
 
-  const message = `<li class="message ${
-    username === messages.username ? "sent" : "receive"
-  }">
-    ${
-      username !== messages.username
-        ? `<span style = "color: ${colors[colorIndex]}"> <b>${messages.username}</b> </span> <br>`
-        : ""
+  let userColor = colors[colorIndex];
+
+  const message = `<li class="message ${username === messages.username ? "sent" : "receive"
+    }">
+    ${username !== messages.username
+      ? `<span style = "color: ${colors[colorIndex]}"> <b>${messages.username}</b> </span> <br>`
+      : ""
     }
-    <img src="https://api.dicebear.com/8.x/initials/svg?seed=${
-      messages.username
-    }&backgroundColor=b6e3f4,c0aede,d1d4f9"> 
+    <img src="https://api.dicebear.com/8.x/initials/svg?seed=${messages.username
+    }&backgroundColor=${userColor.substring(1)}"> 
     ${messages.message}<br>
     <sup class = "chatTime"> ${formattedDateTime} </sup></li>`;
   container.innerHTML += message;
