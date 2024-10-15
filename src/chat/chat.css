@@ -110,11 +110,13 @@ ol {
   font-family: "Poppins", sans-serif;
   size: 16px;
   font-weight: 500;
+  margin-top: -3px;
 }
 
-#singOut-icon {
+#signOut-icon {
   position: absolute;
   top: 36%;
+  margin: -2px 35px 0px 0px;
 }
 
 #signOutButton:hover {
@@ -132,6 +134,13 @@ ol {
 
 .header img:hover {
   opacity: 100%;
+}
+
+#active_user {
+  color: #083671;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  margin: 0px 0px 10px 10px;
 }
 
 .user-box {
@@ -201,7 +210,7 @@ ol {
 .message img {
   max-width: 35px;
   max-height: 35px;
-  margin: -15px 0px 0px -45px;
+  margin: -28px 0px 0px -50px;
   float: left;
   border-radius: 50%;
 }
@@ -302,6 +311,12 @@ ol {
   font-size: x-small;
 }
 
+#profile-username-label {
+  color: #083671;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+
 #profile-username-label,
 #profile-username {
   margin-top: 3%;
@@ -344,4 +359,19 @@ ol {
     right: 6.5%;
     top: 30%;
   }
+
+  #signOut-icon {
+    display: none;
+  }
+
+  #message-box {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  #message-btn {
+    margin-bottom: 25px;
+  }
+
+
 }
