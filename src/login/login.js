@@ -22,23 +22,23 @@ let passwordSin = document.getElementById("passwordSin");
 let eyeiconSup = document.getElementById("eyeiconSup");
 let passwordSup = document.getElementById("passwordSup");
 
-eyeicon.onclick = function(){
-    if(passwordSin.type == "password"){
+eyeicon.onclick = function () {
+    if (passwordSin.type == "password") {
         passwordSin.type = "text";
         eyeicon.src = "../../assets/eye-open.png"
     }
-    else{
+    else {
         passwordSin.type = "password";
-        eyeicon.src = "../../assets/eye-close.png"  
+        eyeicon.src = "../../assets/eye-close.png"
     }
 }
-eyeiconSup.onclick = function(){
-    if(passwordSup.type == "password"){
+eyeiconSup.onclick = function () {
+    if (passwordSup.type == "password") {
         passwordSup.type = "text";
         eyeiconSup.src = "../../assets/eye-open.png"
     }
-    else{
+    else {
         passwordSup.type = "password";
-        eyeiconSup.src = "../../assets/eye-close.png"  
+        eyeiconSup.src = "../../assets/eye-close.png"
     }
 }

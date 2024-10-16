@@ -5,13 +5,13 @@ import { getFirestore, collection, query, where, getDocs } from "https://www.gst
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
-  authDomain: "chatweb-awful.firebaseapp.com",
-  databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "chatweb-awful",
-  storageBucket: "chatweb-awful.appspot.com",
-  messagingSenderId: "693279532996",
-  appId: "1:693279532996:web:cf6404be59950947e26691"
+    apiKey: "AIzaSyBumQaN29IZF8LqvB3kqUIgF7v1r5m2Hv0",
+    authDomain: "chatweb-awful.firebaseapp.com",
+    databaseURL: "https://chatweb-awful-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "chatweb-awful",
+    storageBucket: "chatweb-awful.appspot.com",
+    messagingSenderId: "693279532996",
+    appId: "1:693279532996:web:cf6404be59950947e26691"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -19,12 +19,12 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 const fp_button = document.getElementById("forgot_password");
-fp_button.addEventListener("click", async function(event) {
+fp_button.addEventListener("click", async function (event) {
     event.preventDefault();
 
     var email = document.getElementById("emailSin").value;
     if (email) {
-    
+
         const userRef = collection(db, "users");
         const db_email = query(userRef, where("email", "==", email));
         const check_email = await getDocs(db_email);
@@ -34,14 +34,14 @@ fp_button.addEventListener("click", async function(event) {
         }
 
         sendPasswordResetEmail(auth, email)
-        .then(()=>{
-            alert("Password reset email sent. Check your inbox!");
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            console.error("Error sending password reset email:", errorMessage);
-            alert("Error: " + errorMessage);
-        });
-    }
+            .then(() => {
+                alert("Password reset email sent. Check your inbox!");
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error("Error sending password reset email:", errorMessage);
+                alert("Error: " + errorMessage);
+            });
+    }
 });
