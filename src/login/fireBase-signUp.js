@@ -50,7 +50,7 @@ submitSup.addEventListener("click", async function (event) {
 
         alert("Your account is pending admin approval. You will receive an email once your account is verified.");
 
-        window.location.href = "../login/login.html";
+        window.location.href = "login.html";
 
     } catch (error) {
         console.error("Error signing up:", error.message);
