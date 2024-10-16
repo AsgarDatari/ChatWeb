@@ -70,8 +70,8 @@ const db_offline_check = await getDocs(
 function offlineFunction(e) {
   e.preventDefault();
   if (db_offline_check.empty) {
-    console.error("No user found with this email"); // Providing an error message
-    return; // Exiting the function early if there's an error
+    console.error("No user found with this email");
+    return;
   }
   db_offline_check.forEach(async (doc) => {
     var uname = doc.data().email;
