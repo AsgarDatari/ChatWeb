@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-import { getFirestore, collection, where, query, getDocs, updateDoc, doc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+import { getFirestore, collection, where, query, getDocs, updateDoc, addDoc  } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -29,25 +29,47 @@ submitSup.addEventListener("click", async function (event) {
     const password = document.getElementById("passwordSin").value;
 
     try {
+        console.log("Attempting to sign in...");
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        // Signed in
+        console.log("User signed in successfully:", userCredential);
+        
         const user = userCredential.user;
         
-        const db_username_admin = await getDocs(query(collection(db, "admin"), where("email", "==", user.email)))
-    
-        if(!db_username_admin.empty)
-        {
+        const db_username_admin = await getDocs(query(collection(db, "admin"), where("email", "==", user.email)));
+
+        if (!db_username_admin.empty) {
             let username = "";
             db_username_admin.forEach((doc) => {
-            username = doc.data().username;
-            console.log(username);
+                username = doc.data().username;
             });
+            
+            const statusCollection = collection(db, 'status');
+            const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
+            if (db_status.empty) {
+                await addDoc(statusCollection, {
+                    email: user.email,
+                    username: username,
+                    status: "Online",
+                });
+            }
+            else{
+                for (const doc of db_status.docs) {
+                    const userData = doc.data();
+                    const currentStatus = userData.status;
+                    
+                    if (currentStatus === "Offline") {
+                        const docRef = doc.ref;
+                        await updateDoc(docRef, {
+                            status: "Online"
+                        });
+                    }
+                }
+            }
             localStorage.setItem("username", username);
             localStorage.setItem("email", email);
-
             window.location.href = "../chat/admin_chat.html";
             
-        }else{
+        } else {
             const db_user = await getDocs(query(collection(db, "users"), where("email", "==", user.email)));
             if (db_user.empty) {
                 throw new Error("No user found with this email");
@@ -66,19 +88,19 @@ submitSup.addEventListener("click", async function (event) {
             if (!isApproved) {
                 alert("User has not been approved by the admin.");
                 window.location.href = "../login/login.html";
-
+                return; // Stop further execution
             }
-            
+
             const statusCollection = collection(db, 'status');
             const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
-            if(db_status.empty){
+            if (db_status.empty) {
                 throw new Error("No user found with this email");
             }
 
             for (const doc of db_status.docs) {
                 const userData = doc.data();
                 const currentStatus = userData.status;
-            
+                
                 if (currentStatus === "Offline") {
                     const docRef = doc.ref;
                     await updateDoc(docRef, {
@@ -93,7 +115,7 @@ submitSup.addEventListener("click", async function (event) {
             window.location.href = "../chat/chat.html";
         }
     } catch (error) {
-        console.error("Error signing in:", error.message);
+        console.error("Error signing in:", error.code, error.message);
         document.getElementById('invalid-login').innerHTML = "Entered login credentials are invalid";
     }
 });
