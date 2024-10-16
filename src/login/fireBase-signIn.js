@@ -33,36 +33,65 @@ submitSup.addEventListener("click", async function (event) {
         // Signed in
         const user = userCredential.user;
         
-        const statusCollection = collection(db, 'status');
-        const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
-        if(db_status.empty){
-            throw new Error("No user found with this email");
-        }
-        let uname = "";
-        db_status.forEach(async (doc) => {
-            uname = doc.data().email;
-            console.log(uname);
-            const docRef = doc.ref;
-            await updateDoc(docRef, {
-                status: "Online"
-            });
-        });
-
-        const db_username = await getDocs(query(collection(db, "users"), where("email", "==", user.email)));
-        if(db_username.empty){
-          throw new Error("No user found with this email");
-        }
-        let username = "";
-        db_username.forEach((doc) => {
+        const db_username_admin = await getDocs(query(collection(db, "admin"), where("email", "==", user.email)))
+    
+        if(!db_username_admin.empty)
+        {
+            let username = "";
+            db_username_admin.forEach((doc) => {
             username = doc.data().username;
             console.log(username);
-        });
+            });
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", email);
 
-        localStorage.setItem("username", username);
-        localStorage.setItem("email", email);
+            window.location.href = "../chat/admin_chat.html";
+            
+        }else{
+            const db_user = await getDocs(query(collection(db, "users"), where("email", "==", user.email)));
+            if (db_user.empty) {
+                throw new Error("No user found with this email");
+            }
+        
+            let isApproved = false;
+            let username = "";
+            db_user.forEach((doc) => {
+                const userData = doc.data();
+                username = userData.username;
+                if (userData.request === "approved") {
+                    isApproved = true;
+                }
+            });
 
-       window.location.href = "../chat/chat.html";
+            if (!isApproved) {
+                alert("User has not been approved by the admin.");
+                window.location.href = "../login/login.html";
 
+            }
+            
+            const statusCollection = collection(db, 'status');
+            const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
+            if(db_status.empty){
+                throw new Error("No user found with this email");
+            }
+
+            for (const doc of db_status.docs) {
+                const userData = doc.data();
+                const currentStatus = userData.status;
+            
+                if (currentStatus === "Offline") {
+                    const docRef = doc.ref;
+                    await updateDoc(docRef, {
+                        status: "Online"
+                    });
+                }
+            }
+            
+            localStorage.setItem("username", username);
+            localStorage.setItem("email", user.email);
+        
+            window.location.href = "../chat/chat.html";
+        }
     } catch (error) {
         console.error("Error signing in:", error.message);
         document.getElementById('invalid-login').innerHTML = "Entered login credentials are invalid";

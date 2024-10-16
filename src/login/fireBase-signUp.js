@@ -39,7 +39,8 @@ submitSup.addEventListener("click", function (event) {
         addDoc(usersCollection, {
             userId: user.uid,
             username: userName,
-            email: email
+            email: email,
+            request: "pending"
         })
         .then(() => {
 
@@ -47,12 +48,17 @@ submitSup.addEventListener("click", function (event) {
             addDoc(statusCollection, {
                 email: user.email,
                 username: userName,
-                status: "Online",
+                status: "Offline",
             })
-            localStorage.setItem("username", userName);
-            localStorage.setItem("email", email);
+            // localStorage.setItem("username", userName);
+            // localStorage.setItem("email", email);
             
-            window.location.href = "../chat/chat.html";
+            // window.location.href = "../chat/chat.html";
+    
+            alert("Your account is pending admin approval. You will receive an email once your account is verified.");
+    
+            window.location.href = "/index.html";
+
         })
         .catch((error) => {
             console.error("Error adding user data to Firestore: ", error);
