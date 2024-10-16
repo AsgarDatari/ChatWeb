@@ -53,3 +53,25 @@ async function approveUser(userId) {
 
 window.approveUser = approveUser;
 window.onload = getUserStatus;
+
+const style = document.createElement('style');
+style.textContent = `
+    button {
+        background-color: #54c1ec;
+        background-color: #54c1ec;
+        color: white !important;
+        opacity: 100% !important;
+        border: none;
+        border-radius: 5px;
+        margin: 5px 0px 0px 10px;
+        padding: 6px 10px;
+        box-shadow: 0 0 2px;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        transition: 0.2s ease-out;
+    }
+    button:hover {
+        background-color: #0e99d4;
+}
+`;
+document.head.appendChild(style);
