@@ -41,7 +41,9 @@ h1 {
     background-color: #0e99d4;
 }
 
-#listDivApprove, #listDivBan {
+#userList,
+#userListApprove,
+#userListBan {
     margin: 40px 0px 0px 14%;
     font-family: "Open+Sans", sans-serif;
     font-size: 1.2rem;
