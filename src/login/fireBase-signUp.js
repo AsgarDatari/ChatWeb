@@ -47,14 +47,10 @@ submitSup.addEventListener("click", async function (event) {
             username: userName,
             status: "Offline",
         });
-
-        alert("Your account is pending admin approval. You will receive an email once your account is verified.");
-
-        window.location.href = "login.html";
+        document.getElementById('invalid-signUp').innerHTML = "Account registered, wait for admin to approve the access."
 
     } catch (error) {
         console.error("Error signing up:", error.message);
-        // Handle errors during signup or Firestore document addition
-        document.getElementById('invalid-signUp').innerHTML = "Error: " + error.message; // Display the error message
+        document.getElementById('invalid-signUp').innerHTML = "Error: " + error.message; 
     }
 });
