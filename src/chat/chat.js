@@ -86,7 +86,7 @@ fetchChat.on("child_added", function (snapshot) {
 
   let userColor = colors[colorIndex];
 
-  const message = `<li class="message ${username === messages.username ? "sent" : "receive"
+  const message = `<li class="message ${email === messages.email ? "sent" : "receive"
     }">
     ${username !== messages.username
       ? `<span style = "color: ${colors[colorIndex]}"> <b>${messages.username}</b> </span> <br>`
