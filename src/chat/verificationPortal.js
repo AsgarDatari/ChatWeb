@@ -12,34 +12,82 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const listDivApprove = document.getElementById("userListApprove");
+const listDivBan = document.getElementById("userListBan");
 const listDiv = document.getElementById("userList");
 
+
 async function getUserStatus() {
+    // Approved to ban
+    listDiv.innerHTML = '<p>Active Users.</p>'; 
     try {
         const usersRef = collection(db, "users");
-        const q = query(usersRef, where("request", "==", "pending"));
-
+        const q = query(usersRef, where("request", "==", "approved"));
         const querySnapshot = await getDocs(q);
-        listDiv.innerHTML = '';
 
         if (querySnapshot.empty) {
-            listDiv.innerHTML = '<p>No pending users found.</p>';
+            listDiv.innerHTML += '<p>No active users found.</p>'; 
         } else {
             querySnapshot.forEach((userDoc) => {
                 const userData = userDoc.data();
                 const userId = userDoc.id;
 
-                const userDiv = document.createElement("div");
-                userDiv.innerHTML = `
-          <p>${userData.username} (${userData.email})  :  <button onclick="approveUser('${userId}')">Approve</button> </p>
-        `;
-                listDiv.appendChild(userDiv);
+                listDiv.innerHTML += `
+                    <p>${userData.username} (${userData.email})  :  <button onclick="banUser('${userId}')">Ban</button> </p>
+                `;
             });
         }
     } catch (error) {
         listDiv.innerHTML = '<p>Error loading users. Please try again...</p>';
     }
+
+    // Unapproved to approved.
+    listDivApprove.innerHTML = '<p>Approve Users.</p>'; 
+    try {
+        const usersRef = collection(db, "users");
+        const q = query(usersRef, where("request", "==", "pending"));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+            listDivApprove.innerHTML += '<p>No pending users found.</p>';
+        } else {
+            querySnapshot.forEach((userDoc) => {
+                const userData = userDoc.data();
+                const userId = userDoc.id;
+
+                listDivApprove.innerHTML += `
+                    <p>${userData.username} (${userData.email})  :  <button onclick="approveUser('${userId}')">Approve</button> </p>
+                `;
+            });
+        }
+    } catch (error) {
+        listDivApprove.innerHTML = '<p>Error loading users. Please try again...</p>';
+    }
+
+    // Ban to Unban
+    listDivBan.innerHTML = '<p>Ban Users.</p>'; 
+    try {
+        const usersRef = collection(db, "users");
+        const q = query(usersRef, where("request", "==", "ban"));
+        const querySnapshot = await getDocs(q);
+
+        if (querySnapshot.empty) {
+            listDivBan.innerHTML += '<p>No banned users found.</p>';
+        } else {
+            querySnapshot.forEach((userDoc) => {
+                const userData = userDoc.data();
+                const userId = userDoc.id;
+
+                listDivBan.innerHTML += `
+                    <p>${userData.username} (${userData.email})  :  <button onclick="approveUser('${userId}')">Approve Again</button> </p>
+                `;
+            });
+        }
+    } catch (error) {
+        listDivBan.innerHTML = '<p>Error loading users. Please try again...</p>';
+    }
 }
+
 
 async function approveUser(userId) {
     try {
@@ -50,8 +98,18 @@ async function approveUser(userId) {
         console.error("Error approving user: ", error);
     }
 }
+async function banUser(userId) {
+    try {
+        const userRef = doc(db, "users", userId);
+        await updateDoc(userRef, { request: 'ban' });
+        getUserStatus();
+    } catch (error) {
+        console.error("Error approving user: ", error);
+    }
+}
 
 window.approveUser = approveUser;
+window.banUser = banUser;
 window.onload = getUserStatus;
 
 const style = document.createElement('style');

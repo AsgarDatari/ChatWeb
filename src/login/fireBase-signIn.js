@@ -73,19 +73,28 @@ submitSup.addEventListener("click", async function (event) {
             }
 
             let isApproved = false;
+            let isBanned = false;
             let username = "";
             db_user.forEach((doc) => {
                 const userData = doc.data();
                 username = userData.username;
-                if (userData.request === "approved") {
+                if(userData.request == "ban"){
+                    isBanned = true;
+                }
+                if (userData.request == "approved") {
                     isApproved = true;
                 }
+  
             });
-
-            if (!isApproved) {
+            if(isBanned == true){
+                document.getElementById('invalid-login').innerHTML = "User has been banned.";
+                return;
+            }
+            if (isApproved == false) {
                 document.getElementById('invalid-login').innerHTML = "User has not been verified by the admin.";
                 return; 
             }
+
 
             const statusCollection = collection(db, 'status');
             const db_status = await getDocs(query(statusCollection, where("email", "==", user.email)));
