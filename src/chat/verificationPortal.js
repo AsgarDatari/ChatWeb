@@ -19,14 +19,14 @@ const listDiv = document.getElementById("userList");
 
 async function getUserStatus() {
     // Approved to ban
-    listDiv.innerHTML = '<p>Active Users.</p>'; 
+    listDiv.innerHTML = '<p>Active Users.</p>';
     try {
         const usersRef = collection(db, "users");
         const q = query(usersRef, where("request", "==", "approved"));
         const querySnapshot = await getDocs(q);
 
         if (querySnapshot.empty) {
-            listDiv.innerHTML += '<p>No active users found.</p>'; 
+            listDiv.innerHTML += '<p>No active users found.</p>';
         } else {
             querySnapshot.forEach((userDoc) => {
                 const userData = userDoc.data();
@@ -42,7 +42,7 @@ async function getUserStatus() {
     }
 
     // Unapproved to approved.
-    listDivApprove.innerHTML = '<p>Approve Users.</p>'; 
+    listDivApprove.innerHTML = '<p>Approve Users.</p>';
     try {
         const usersRef = collection(db, "users");
         const q = query(usersRef, where("request", "==", "pending"));
@@ -65,7 +65,7 @@ async function getUserStatus() {
     }
 
     // Ban to Unban
-    listDivBan.innerHTML = '<p>Ban Users.</p>'; 
+    listDivBan.innerHTML = '<p>Ban Users.</p>';
     try {
         const usersRef = collection(db, "users");
         const q = query(usersRef, where("request", "==", "ban"));
@@ -116,13 +116,12 @@ const style = document.createElement('style');
 style.textContent = `
     button {
         background-color: #54c1ec;
-        background-color: #54c1ec;
         color: white !important;
         opacity: 100% !important;
         border: none;
         border-radius: 5px;
         margin: 5px 0px 0px 10px;
-        padding: 6px 10px;
+        padding: 5px 10px;
         box-shadow: 0 0 2px;
         font-family: "Poppins", sans-serif;
         font-size: 0.9rem;
