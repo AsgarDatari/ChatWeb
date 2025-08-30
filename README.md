@@ -26,6 +26,8 @@ What does ChatWeb Offer?
  9. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
 ----
 
+### We have not enabled gmail authentication.
+
 # ScreenShots of the ChatWeb Application in Desktop & Mobile View
 <table>
   <tr>
