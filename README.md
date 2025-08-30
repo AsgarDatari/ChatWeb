@@ -10,7 +10,7 @@ The project reached its running state due to the hard work of three individuals:
 
    * Asgar Datari [Frontend Designer & Team Leader]
    * Aaquif Qureshi [Backend Engineer & Database Engineer]
-   * Mrunal Shah [Backend Architect & Mentor]
+   * Mrunal Shah [Backend Architect, Backend Engineer & Mentor]
 
 ----
 What does ChatWeb Offer?
@@ -19,10 +19,11 @@ What does ChatWeb Offer?
  2. It is Responsive for Mobile, Tablets, Laptops, and more...
  3. It uses Firebase for its real-time database for storing and retrieving data.
  4. SignIn, SignUp, and SignOut are secure as we use Firebase's inbuilt functions.
- 5. We store users' online/offline status and allow other users to see who is online or offline. (Only available in desktop view)
- 6. A lot of details are present at every part of the code, if you notice.
- 7. A lot of bugs exist at every part of the code because we are broken.
- 8. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
+ 5. Admin Mode: Admin needs to approve the user before they can join the server, Admin can ban the user on single click.
+ 6. We store users' online/offline status and allow other users to see who is online or offline. (Only available in desktop view)
+ 7. A lot of details are present at every part of the code, if you notice.
+ 8. A lot of bugs exist at every part of the code because we are broken.
+ 9. The project is live on Vercel but will not be updated, and no new features will be added anytime soon.
 ----
 
 # ScreenShots of the ChatWeb Application in Desktop & Mobile View
@@ -66,14 +67,28 @@ What does ChatWeb Offer?
  <tr>
    <td>
     
-   ![image](https://github.com/AsgarDatari/ChatWeb/assets/108453611/a28ca2c2-4721-4539-ae95-8f405c87ebb5)
-    
+   <img width="1917" height="936" alt="image" src="https://github.com/user-attachments/assets/5fed3536-a019-4ca6-b87d-5895942c99e6" />
+
    </td>
    <td>
 
-   ![IMG-20240511-WA0002](https://github.com/AsgarDatari/ChatWeb/assets/108453611/bee1bf35-dddb-445c-8824-b3e1e2465cee)
+   ![fp](https://github.com/user-attachments/assets/00be791b-143a-4efa-94f3-522c59ee380e)
 
    </td>
+ </tr>
+
+ <tr>
+  <td>
+   
+   <img width="1919" height="939" alt="image" src="https://github.com/user-attachments/assets/cc5cd06d-fb7b-4b96-9978-265ebe1bed7b" />
+
+  </td>
+  <td>
+   
+   ![ap](https://github.com/user-attachments/assets/5b33a538-b4ae-45c9-8bf0-70d140560f70)
+
+
+  </td>
  </tr>
 
 <tr>
